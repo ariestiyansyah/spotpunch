@@ -1,0 +1,77 @@
+I, [2015-07-07T14:49:42.552796 #23196]  INFO -- : Refreshing Gem list
+I, [2015-07-07T14:49:44.944780 #23196]  INFO -- : listening on addr=/home/azureuser/myapp/shared/sockets/unicorn.sock fd=11
+I, [2015-07-07T14:49:44.944931 #23196]  INFO -- : worker=0 spawning...
+I, [2015-07-07T14:49:44.946425 #23196]  INFO -- : worker=1 spawning...
+I, [2015-07-07T14:49:44.946955 #23199]  INFO -- : worker=0 spawned pid=23199
+I, [2015-07-07T14:49:44.947666 #23196]  INFO -- : master process ready
+I, [2015-07-07T14:49:44.948732 #23199]  INFO -- : worker=0 ready
+I, [2015-07-07T14:49:44.949467 #23202]  INFO -- : worker=1 spawned pid=23202
+I, [2015-07-07T14:49:44.951143 #23202]  INFO -- : worker=1 ready
+I, [2015-07-07T14:49:56.136806 #23196]  INFO -- : reaped #<Process::Status: pid 23199 exit 0> worker=0
+I, [2015-07-07T14:49:56.136930 #23196]  INFO -- : reaped #<Process::Status: pid 23202 exit 0> worker=1
+I, [2015-07-07T14:49:56.137020 #23196]  INFO -- : master complete
+I, [2015-07-07T14:58:38.576565 #23411]  INFO -- : Refreshing Gem list
+I, [2015-07-07T14:58:40.958408 #23411]  INFO -- : unlinking existing socket=/home/azureuser/myapp/shared/sockets/unicorn.sock
+I, [2015-07-07T14:58:40.958589 #23411]  INFO -- : listening on addr=/home/azureuser/myapp/shared/sockets/unicorn.sock fd=11
+I, [2015-07-07T14:58:40.958707 #23411]  INFO -- : worker=0 spawning...
+I, [2015-07-07T14:58:40.960066 #23411]  INFO -- : worker=1 spawning...
+I, [2015-07-07T14:58:40.960614 #23414]  INFO -- : worker=0 spawned pid=23414
+I, [2015-07-07T14:58:40.961286 #23411]  INFO -- : master process ready
+I, [2015-07-07T14:58:40.962041 #23417]  INFO -- : worker=1 spawned pid=23417
+I, [2015-07-07T14:58:40.967464 #23417]  INFO -- : worker=1 ready
+I, [2015-07-07T14:58:40.968532 #23414]  INFO -- : worker=0 ready
+E, [2015-07-07T14:58:45.400826 #23417] ERROR -- : app error: Missing `secret_token` and `secret_key_base` for 'production' environment, set these values in `config/secrets.yml` (RuntimeError)
+E, [2015-07-07T14:58:45.400923 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:534:in `validate_secret_key_config!'
+E, [2015-07-07T14:58:45.400956 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:246:in `env_config'
+E, [2015-07-07T14:58:45.400981 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:514:in `call'
+E, [2015-07-07T14:58:45.401006 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+E, [2015-07-07T14:58:45.401030 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:580:in `process_client'
+E, [2015-07-07T14:58:45.401055 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:674:in `worker_loop'
+E, [2015-07-07T14:58:45.401080 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+E, [2015-07-07T14:58:45.401104 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:140:in `start'
+E, [2015-07-07T14:58:45.401128 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+E, [2015-07-07T14:58:45.401152 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+E, [2015-07-07T14:58:45.401175 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+E, [2015-07-07T14:58:45.401199 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+E, [2015-07-07T14:58:45.401222 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+E, [2015-07-07T14:58:47.424582 #23417] ERROR -- : app error: Missing `secret_token` and `secret_key_base` for 'production' environment, set these values in `config/secrets.yml` (RuntimeError)
+E, [2015-07-07T14:58:47.424746 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:534:in `validate_secret_key_config!'
+E, [2015-07-07T14:58:47.424800 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:246:in `env_config'
+E, [2015-07-07T14:58:47.424828 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:514:in `call'
+E, [2015-07-07T14:58:47.424852 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+E, [2015-07-07T14:58:47.424876 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:580:in `process_client'
+E, [2015-07-07T14:58:47.424900 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:674:in `worker_loop'
+E, [2015-07-07T14:58:47.424924 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+E, [2015-07-07T14:58:47.424947 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:140:in `start'
+E, [2015-07-07T14:58:47.424970 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+E, [2015-07-07T14:58:47.424993 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+E, [2015-07-07T14:58:47.425015 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+E, [2015-07-07T14:58:47.425037 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+E, [2015-07-07T14:58:47.425060 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+E, [2015-07-07T14:58:48.384393 #23417] ERROR -- : app error: Missing `secret_token` and `secret_key_base` for 'production' environment, set these values in `config/secrets.yml` (RuntimeError)
+E, [2015-07-07T14:58:48.384491 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:534:in `validate_secret_key_config!'
+E, [2015-07-07T14:58:48.384521 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:246:in `env_config'
+E, [2015-07-07T14:58:48.384545 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:514:in `call'
+E, [2015-07-07T14:58:48.384569 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+E, [2015-07-07T14:58:48.384592 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:580:in `process_client'
+E, [2015-07-07T14:58:48.384615 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:674:in `worker_loop'
+E, [2015-07-07T14:58:48.384638 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:529:in `spawn_missing_workers'
+E, [2015-07-07T14:58:48.384661 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:140:in `start'
+E, [2015-07-07T14:58:48.384684 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+E, [2015-07-07T14:58:48.384707 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+E, [2015-07-07T14:58:48.384729 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+E, [2015-07-07T14:58:48.384750 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+E, [2015-07-07T14:58:48.384834 #23417] ERROR -- : /home/azureuser/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-07-07T14:59:00.510926 #23411]  INFO -- : reaped #<Process::Status: pid 23414 exit 0> worker=0
+I, [2015-07-07T14:59:00.511046 #23411]  INFO -- : reaped #<Process::Status: pid 23417 exit 0> worker=1
+I, [2015-07-07T14:59:00.511130 #23411]  INFO -- : master complete
+I, [2015-07-07T15:15:02.387803 #23577]  INFO -- : Refreshing Gem list
+I, [2015-07-07T15:15:04.746855 #23577]  INFO -- : unlinking existing socket=/home/azureuser/myapp/shared/sockets/unicorn.sock
+I, [2015-07-07T15:15:04.747041 #23577]  INFO -- : listening on addr=/home/azureuser/myapp/shared/sockets/unicorn.sock fd=11
+I, [2015-07-07T15:15:04.747165 #23577]  INFO -- : worker=0 spawning...
+I, [2015-07-07T15:15:04.748769 #23577]  INFO -- : worker=1 spawning...
+I, [2015-07-07T15:15:04.749277 #23580]  INFO -- : worker=0 spawned pid=23580
+I, [2015-07-07T15:15:04.754749 #23577]  INFO -- : master process ready
+I, [2015-07-07T15:15:04.755246 #23580]  INFO -- : worker=0 ready
+I, [2015-07-07T15:15:04.756036 #23583]  INFO -- : worker=1 spawned pid=23583
+I, [2015-07-07T15:15:04.757767 #23583]  INFO -- : worker=1 ready
