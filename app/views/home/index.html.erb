@@ -4,10 +4,15 @@
     <i class="spcon spcon-logo"></i>
     <span>SpotPunch</span>
   </h1>
-  <%= render "form/login" %>
+  <%#= render "form/login" %>
   <div class="spotpunch-intro">
     <h3>What is SpotPunch?</h3>
     <p>SpotPunch is an app where you can easily explore interesting places around you, especially inside malls. You can check out merchant's highlight products, news, and promotions. You can also easily look for merchant's spot inside malls. Love a product that you just bought? Punch it! Then your friends will get updated about products that you just bought, as well as you can check out your friends purchased products.</p>
     <p>Let's Spot and Punch!</p>
+    <div class="login-button">
+      <h3>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </h3>
+    </div>
   </div>
 </section>
