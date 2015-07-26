@@ -11,3 +11,8 @@
     <p>Let's Spot and Punch!</p>
   </div>
 </section>
+<script type="text/javascript">
+  <% flash.each do |name, msg| %>
+    alert("<%= msg %>");
+  <% end %>
+</script>

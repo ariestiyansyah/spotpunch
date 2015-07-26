@@ -1,0 +1,21 @@
+<%= form_for(@user, :as => :user, :url => session_path(:user), html: { class: "login-form"}) do |f| %>
+  <div class="login-input">
+    <%= f.email_field :email, :autofocus => true, placeholder:"Email" %>
+  </div>
+  <div class="login-input">
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+  <div class="login-button">
+    <%= f.submit "LOGIN" %>
+  </div>
+  <div class="login-link">
+    <div class="login-row">
+      <div>
+        <%= link_to "Forgot", new_password_path(@user) %>
+      </div>
+      <div>
+        <%= link_to "Register", new_registration_path(@user) %>
+      </div>
+    </div>
+  </div>
+<% end %>
