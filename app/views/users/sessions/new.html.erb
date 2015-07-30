@@ -1,16 +1,26 @@
-<section id="main-content" class="content dashboard">
-  <span class="dashboard-help" onclick="alert('Help Button'); return false;">?</span>
-  <h1 class="dashboard-logo">
-    <i class="spcon spcon-logo"></i>
-    <span>SpotPunch</span>
-  </h1>
-  <%= render "form/login" %>
-  <div class="spotpunch-intro">
-    <h3>What is SpotPunch?</h3>
-    <p>SpotPunch is an app where you can easily explore interesting places around you, especially inside malls. You can check out merchant's highlight products, news, and promotions. You can also easily look for merchant's spot inside malls. Love a product that you just bought? Punch it! Then your friends will get updated about products that you just bought, as well as you can check out your friends purchased products.</p>
-    <p>Let's Spot and Punch!</p>
+<div class="canvas">
+  <!-- Dashboard Content -->
+  <div class="content dashboard">
+    <div class="dashboard-container fade">
+      <!-- Dashboard Help -->
+      <a class="dashboard-help" data-toggle="modal" data-target="#dashboard-help">?</a>
+      <!-- Dashboard Logo -->
+      <h1 class="dashboard-logo">
+        <i class="spicon spicon-logo"></i>
+        <span>SpotPunch</span>
+      </h1>
+      <!-- Form Login -->
+      <%= render "form/login" %>
+    </div>
   </div>
-</section>
+</div>
+<div class="modal fade" id="dashboard-help" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= render "modal/help" %>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
   <% flash.each do |name, msg| %>
     alert("<%= msg %>");

@@ -1,12 +1,27 @@
 <% content_for :title do %>Register | Spotpunch<% end %>
-<section id="main-content" class="content dashboard">
-  <span class="dashboard-help" onclick="alert('Help Button'); return false;">?</span>
-  <h1 class="dashboard-logo">
-    <i class="spcon spcon-logo"></i>
-    <span>SpotPunch</span>
-  </h1>
-  <%= render "form/register" %>
-</section>
+<div class="canvas">
+  <!-- Dashboard Content -->
+  <div class="content dashboard">
+    <div class="dashboard-container fade">
+      <!-- Dashboard Help -->
+      <a class="dashboard-help" data-toggle="modal" data-target="#dashboard-help">?</a>
+      <!-- Dashboard Logo -->
+      <h1 class="dashboard-logo">
+        <i class="spicon spicon-logo"></i>
+        <span>SpotPunch</span>
+      </h1>
+      <!-- Form Login -->
+      <%= render "form/register" %>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="dashboard-help" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= render "modal/help" %>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
   <% unless resource.errors.empty? %>
     alert("<%= devise_error_messages!.html_safe %>");
