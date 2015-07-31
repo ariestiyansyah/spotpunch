@@ -1,0 +1,51 @@
+//
+// Icons
+// -----------------------------------------------------------------------------
+
+@font-face {
+	font-family: '#{$icon-font-name}';
+	src: url('#{$font-path}/#{$icon-prefix}/#{$icon-prefix}.eot');
+	src: url('#{$font-path}/#{$icon-prefix}/#{$icon-prefix}.eot?#iefix') format('embedded-opentype'),
+		url('#{$font-path}/#{$icon-prefix}/#{$icon-prefix}.woff')        format('woff'),
+		url('#{$font-path}/#{$icon-prefix}/#{$icon-prefix}.ttf')         format('truetype'),
+		url('#{$font-path}/#{$icon-prefix}/#{$icon-prefix}.svg')         format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.#{$icon-prefix} {
+	display: inline-block;
+	line-height: 1;
+	font: normal normal normal #{$icon-size}/1 #{$icon-font-name};
+	font-size: inherit;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	transform: translate(0, 0);
+	text-decoration: none;
+	text-transform: none;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&-logo:before { content: "\e600" }
+	&-nav:before  { content: "\e601" }
+	&-home:before  { content: "\e602" }
+	&-activity:before  { content: "\e603" }
+	&-punch:before  { content: "\e604" }
+	&-search:before  { content: "\e605" }
+	&-spoting:before  { content: "\e606" }
+	&-spotter:before  { content: "\e607" }
+	&-promotion:before  { content: "\e608" }
+	&-wishlist:before  { content: "\e609" }
+	&-setting:before  { content: "\e60a" }
+	&-login:before  { content: "\e60b" }
+	&-logout:before  { content: "\e60c" }
+	&-like:before  { content: "\e60d" }
+	&-comment:before  { content: "\e60e" }
+	&-quote:before  { content: "\e60f" }
+	&-arrow-up:before  { content: "\e610" }
+	&-arrow-right:before  { content: "\e611" }
+	&-arrow-down:before  { content: "\e612" }
+	&-arrow-left:before  { content: "\e613" }
+	&-check:before  { content: "\e614" }
+}

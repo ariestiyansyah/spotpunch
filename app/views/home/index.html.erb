@@ -1,34 +1,6 @@
 <div class="canvas">
   <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="sidebar-inner">
-      <div class="side-profile">
-        <img class="profile-image" src="images/photo.png" alt="profile" />
-        <div class="profile-body">
-          <div class="profile-name">
-            Jane Doe
-          </div>
-          <a href="#">Edit Profile</a>
-        </div>
-      </div>
-      <ul class="navigation">
-        <li><a href="#"><i class="spicon spicon-home"></i> Timeline</a></li>
-        <li><a href="#"><i class="spicon spicon-activity"></i> Activity</a></li>
-        <li><a href="#"><i class="spicon spicon-punch"></i> Your Punches</a></li>
-        <li><a href="#"><i class="spicon spicon-spoting"></i> Spotting</a></li>
-        <li><a href="#"><i class="spicon spicon-spotter"></i> Spotters</a></li>
-        <li><a href="#"><i class="spicon spicon-promotion"></i> Promotions</a></li>
-        <li><a href="#"><i class="spicon spicon-wishlist"></i> Wishlist</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="spicon spicon-setting"></i> Settings</a></li>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete  do %>
-            <i class="spicon spicon-logout"></i> Logout
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <%= render "layouts/sidebar"%>
 
   <!-- Dashboard Content -->
   <div class="content">
@@ -41,7 +13,7 @@
         </a>
 
         <!-- Right Icon -->
-        <a href="modal/search.html" data-toggle="modal" data-target="#full-modal" class="pull-right">
+        <a href="#" data-toggle="modal" data-target="#full-modal" class="pull-right">
           <i class="spicon spicon-search"></i>
         </a>
 
@@ -60,11 +32,18 @@
             <div class="timeline-header">
               <a href="profile.html" class="timeline-photo">
                 <img src="images/photo.png" alt="photo" />
+                <span class="verify"><i class="spicon spicon-check"></i></span>
               </a>
               <div class="timeline-title">
-                <div class="icon">
-                  <a href="#"><i style="color: red;" class="spicon spicon-like"></i></a>
-                  <a href="#"><i class="spicon spicon-comment"></i></a>
+                <!--<div class="icon">-->
+                <div class="timeline-right">
+                  <div class="product-image">
+                    <img src="images/image.png" alt="image" />
+                  </div>
+                  <div class="icon fade">
+                    <a href="#"><i style="color: #B63131;" class="spicon spicon-like"></i></a>
+                    <a href="#"><i class="spicon spicon-comment"></i></a>
+                  </div>
                 </div>
                 <div class="store">
                   <a href="#">STARBUCKS</a>
@@ -80,8 +59,10 @@
             <div class="timeline-body">
               <i class="spicon spicon-quote comment-icon"></i>
               <div class="comment">
-                <div class="comment-name">Kim Tae Yeon</div>
-                Enjoy my morning and lighten up my day with a cup of Cappuccino Coffee from Starbucks :)
+                <div class="comment-name">
+                  <a href="profile.html">Kim Tae Yeon</a>
+                </div>
+                <div>Enjoy my morning and lighten up my day with a cup of Cappuccino Coffee from Starbucks :)</div>
               </div>
             </div>
           </div>
@@ -92,10 +73,17 @@
             <div class="timeline-header">
               <a href="profile.html" class="timeline-photo">
                 <img src="images/photo.png" alt="photo" />
+                <span class="verify"><i class="spicon spicon-check"></i></span>
               </a>
               <div class="timeline-title">
-                <div class="image">
-                  <img src="images/image.png" alt="image" />
+                <div class="timeline-right">
+                  <div class="product-image">
+                    <img src="images/image.png" alt="image" />
+                  </div>
+                  <div class="icon fade">
+                    <a href="#"><i style="color: #B63131;" class="spicon spicon-like"></i></a>
+                    <a href="#"><i class="spicon spicon-comment"></i></a>
+                  </div>
                 </div>
                 <div class="store">
                   <a href="#">APPLE</a>
@@ -111,8 +99,10 @@
             <div class="timeline-body">
               <i class="spicon spicon-quote comment-icon"></i>
               <div class="comment">
-                <div class="comment-name">Takeshi Kaneshiro</div>
-                このラップトップは本当に素晴らしいです、私はもうそれなしでは生きすることを想像することはできません
+                <div class="comment-name">
+                  <a href="profile.html">Takeshi Kaneshiro</a>
+                </div>
+                <div>このラップトップは本当に素晴らしいです、私はもうそれなしでは生きすることを想像することはできません</div>
               </div>
             </div>
           </div>
@@ -125,8 +115,10 @@
                 <img src="images/photo.png" alt="photo" />
               </a>
               <div class="timeline-title">
-                <div class="icon">
-                  <a href="#"><i class="spicon spicon-arrow-right"></i></a>
+                <div class="timeline-right">
+                  <div class="icon">
+                    <a href="#"><i class="spicon spicon-arrow-right"></i></a>
+                  </div>
                 </div>
                 <div class="store">
                   <a href="#">UNIQLO</a>
@@ -147,8 +139,10 @@
                 <img src="images/photo.png" alt="photo" />
               </a>
               <div class="timeline-title">
-                <div class="icon">
-                  <a href="#"><i class="spicon spicon-arrow-right"></i></a>
+                <div class="timeline-right">
+                  <div class="icon">
+                    <a href="#"><i class="spicon spicon-arrow-right"></i></a>
+                  </div>
                 </div>
                 <div class="store">
                   <a href="#">H&amp;M</a>
@@ -178,7 +172,9 @@
 <!-- Modal Box -->
 <div class="modal fade" id="full-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
-    <div class="modal-content"></div>
+    <div class="modal-content">
+      <%= render "modal/search"%>
+    </div>
   </div>
 </div>
 
@@ -193,6 +189,33 @@
         canvas.removeClass('on');
       }
     });
+  });
+  $('.timeline-right').each(function () {
+    var $this = $(this);
+    var image = $this.find('.product-image');
+    if (image.length)
+    {
+      $this.on('click', function (e) {
+        var off;
+        image.addClass('off');
+        if (image.hasClass('off'))
+        {
+          $this.find('.icon').addClass('in');
+          $this.on('mouseout', function () {
+            off = setTimeout(function () {
+              image.removeClass('off');
+              $this.find('.icon').removeClass('in');
+            }, 2500);
+          });
+          if (image.hasClass('off'))
+          {
+            $this.on('mouseover', function () {
+              clearInterval(off);
+            });
+          }
+        }
+      });
+    }
   });
 })(jQuery);
 </script>

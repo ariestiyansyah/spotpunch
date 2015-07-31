@@ -1,8 +1,35 @@
-<div class="modal-body">
+<div class="modal-body modal-dark">
   <form class="search-form" action="search.html" method="post">
-    <div style="text-align: center">
-      <p>SEARCH FORM HERE</p>
-      <input type="submit" value="SUBMIT" />
+    <p>You can easily filter your search with this feature.<br />Please try to filter based on what you need.</p>
+    <ul class="search-category">
+      <li><label><input type="checkbox" name="category[]" value="1" /><i class="spicon spicon-activity"></i></label></li>
+      <li><label><input type="checkbox" name="category[]" value="2" /><i class="spicon spicon-comment"></i></label></li>
+      <li><label><input type="checkbox" name="category[]" value="3" /><i class="spicon spicon-promotion"></i></label></li>
+      <li><label><input type="checkbox" name="category[]" value="4" /><i class="spicon spicon-like"></i></label></li>
+      <li><label><input type="checkbox" name="category[]" value="5" /><i class="spicon spicon-home"></i></label></li>
+    </ul>
+    <div class="clearfix"></div>
+    <div class="search-input">
+      <input type="text" name="query" placeholder="KEYWORDS" />
+    </div>
+    <div class="search-input">
+      <select name="mall">
+        <option value="">-- MALL --</option>
+      </select>
+    </div>
+    <div class="search-input">
+      <select name="location">
+        <option value="">-- LOCATION --</option>
+      </select>
+    </div>
+    <div class="search-input">
+      <select name="budget">
+        <option value="">-- BUDGET --</option>
+      </select>
+    </div>
+    <div class="search-button">
+      <input type="submit" value="SEARCH" /> 
+      <input data-dismiss="modal" aria-label="Close" aria-hidden="true" type="button" value="CANCEL" />
     </div>
   </form>
 </div>

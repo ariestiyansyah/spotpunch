@@ -1,0 +1,29 @@
+<div class="sidebar">
+    <div class="sidebar-inner">
+      <div class="side-profile">
+        <img class="profile-image" src="images/photo.png" alt="profile" />
+        <div class="profile-body">
+          <div class="profile-name">
+            <%= display_name current_user %>
+          </div>
+          <%= link_to "Edit Profile", edit_user_registration_path %>
+        </div>
+      </div>
+      <ul class="navigation">
+        <li><a href="#"><i class="spicon spicon-home"></i> Timeline</a></li>
+        <li><a href="#"><i class="spicon spicon-activity"></i> Activity</a></li>
+        <li><a href="#"><i class="spicon spicon-punch"></i> Your Punches</a></li>
+        <li><a href="#"><i class="spicon spicon-spoting"></i> Spotting</a></li>
+        <li><a href="#"><i class="spicon spicon-spotter"></i> Spotters</a></li>
+        <li><a href="#"><i class="spicon spicon-promotion"></i> Promotions</a></li>
+        <li><a href="#"><i class="spicon spicon-wishlist"></i> Wishlist</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="spicon spicon-setting"></i> Settings</a></li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete  do %>
+            <i class="spicon spicon-logout"></i> Logout
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>

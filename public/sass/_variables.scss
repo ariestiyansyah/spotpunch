@@ -1,0 +1,32 @@
+//
+// Define Variables
+// -----------------------------------------------------------------------------
+
+$font-path   : '../fonts' !default;
+$font-family : 'Open Sans', sans-serif !default;
+$font-size   : 12px !default;
+$font-weight : 300 !default;
+$line-height : 21px !default;
+
+$white-color      : #FFFFFF !default;
+$black-color      : #000000 !default;
+$spotpunch-color  : #B63131 !default;
+$link-color       : #428BCA !default;
+$background-color : darken($white-color, 4.5%) !default;
+$default-color    : $black-color !default;
+
+$border-default : 1px solid #E7E7E7 !default;
+/*$border-radius  : 6px !default;*/
+
+$sidebar-color    : #353535 !default;
+$sidebar-width    : 300px;
+
+$icon-font-name : 'SpotPunchIcon';
+$icon-prefix    : 'spicon';
+$icon-size      : 12px !default;
+
+$bar-side-spacing : 10px !default;
+$bar-base-height  : 48px !default;
+/*$bar-tab-height   : 50px !default;*/
+
+/*$button-font-size : 12px !default;*/

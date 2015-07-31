@@ -1,0 +1,40 @@
+<div class="timeline">
+  <div class="timeline-header">
+    <a href="profile.html" class="timeline-photo">
+      <img src="images/photo.png" alt="photo" />
+      <% if current_user.is_verified %>
+        <span class="verify"><i class="spicon spicon-check"></i></span>
+      <% end %>
+    </a>
+    <div class="timeline-title">
+      <!--<div class="icon">-->
+      <div class="timeline-right">
+        <div class="product-image">
+          <img src="images/image.png" alt="image" />
+        </div>
+        <div class="icon fade">
+          <a href="#"><i style="color: #B63131;" class="spicon spicon-like"></i></a>
+          <a href="#"><i class="spicon spicon-comment"></i></a>
+        </div>
+      </div>
+      <div class="store">
+        <a href="#">STARBUCKS</a>
+      </div>
+      <div class="name">
+        <a href="#">Cappuccino Coffee</a>
+      </div>
+      <div class="mall">
+        <a href="#">Summarecon Mall Serpong</a>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-body">
+    <i class="spicon spicon-quote comment-icon"></i>
+    <div class="comment">
+      <div class="comment-name">
+        <a href="profile.html"><%= display_name current_user %></a>
+      </div>
+      <div>Enjoy my morning and lighten up my day with a cup of Cappuccino Coffee from Starbucks :)</div>
+    </div>
+  </div>
+</div>

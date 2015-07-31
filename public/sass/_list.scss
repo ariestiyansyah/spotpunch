@@ -1,0 +1,29 @@
+.listing {
+	border-top: $border-default;
+	border-bottom: $border-default;
+	list-style: none outside;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	> li {
+		border-bottom: $border-default;
+		list-style: none outside;
+		margin: 0;
+		padding: 0;
+		display: block;
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+}
+.load-more {
+	color: #626262;
+	font-size: 15px;
+	text-align: center;
+	a {
+		color: #626262;
+		height: 60px;
+		line-height: 60px;
+		display: block;
+	}
+}

@@ -1,0 +1,302 @@
+//
+// Page Style
+// -----------------------------------------------------------------------------
+
+// Dahsboard
+// -----------------------------------------------------------------------------
+.dashboard {
+	background: $spotpunch-color;
+	color: $white-color;
+	.dashboard-container {
+		margin: 30px 0;
+		@include transition-duration(.5s);
+	}
+	.dashboard-help {
+		background: $white-color;
+		color: $spotpunch-color;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		position: fixed;
+		top: 15px;
+		right: 20px;
+		font-size: 14px;
+		font-weight: 300;
+		text-align: center;
+		z-index: 1;
+		cursor: pointer;
+		outline: none;
+		@include border-radius(30px);
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+	}
+	.dashboard-logo {
+		margin: 0 0 40px 0;
+		padding: 0;
+		line-height: 28px;
+		font-size: 24px;
+		font-weight: 300;
+		text-align: center;
+		cursor: default;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		.spicon-logo {
+			margin-bottom: 25px;
+			font-size: 86px;
+		}
+		span {
+			display: block;
+		}
+	}
+	.login-form {
+		margin: 0 auto;
+		max-width: 768px;
+	}
+	.login-input {
+		color: $spotpunch-color;
+		margin: 25px 75px;
+		position: relative;
+		input {
+			margin: 0;
+			font-size: 15px;
+		}
+	}
+	.login-button {
+		margin: 15px 0;
+		text-align: center;
+		button,
+		submit,
+		input[type="button"],
+		input[type="submit"] {
+			background: transparent;
+			border: 0 none;
+			color: $white-color;
+			padding: 3px 10px;
+			width: auto;
+			font-size: 15px;
+		}
+	}
+	.login-link {
+		border-top: 1px solid $white-color;
+		margin: 15px 75px;
+		padding: 10px 0;
+		.login-row {
+			width: 100%;
+			display: table;
+			> * {
+				border-left: 1px solid $white-color;
+				width: 50%;
+				display: table-cell;
+				text-align: center;
+				&:first-of-type {
+					border-left: 0 none;
+				}
+			}
+		}
+		a {
+			color: $white-color;
+			padding: 0 7px;
+			line-height: 27px;
+			display: inline-block;
+		}
+	}
+}
+.spotpunch-intro {
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+// Timeline
+// -----------------------------------------------------------------------------
+.timeline {
+	padding: 15px;
+	.timeline-header {
+		overflow: hidden;
+		.timeline-photo {
+			margin-right: 15px;
+			float: left;
+			position: relative;
+			> img {
+				display: block;
+			}
+			.verify {
+				background: $white-color;
+				margin-top: -9px;
+				width: 18px;
+				height: 18px;
+				line-height: 18px;
+				position: absolute;
+				top: 50%;
+				right: -9px;
+				text-align: center;
+				@include border-radius(9px);
+				&:before {
+					background: #80B24A;
+					margin-top: -7px;
+					margin-left: -7px;
+					width: 14px;
+					height: 14px;
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					@include border-radius(7px);
+				}
+				.spicon {
+					color: $white-color;
+					font-size: 9px;
+				}
+			}
+		}
+		.timeline-title {
+			position: relative;
+			overflow: hidden;
+			a {
+				color: inherit;
+			}
+			.store {
+				font-size: 12px;
+				font-weight: 800;
+			}
+			.name {
+				line-height: 24px;
+				font-size: 15px;
+			}
+			.mall {
+				font-size: 9px;
+			}
+			.description {
+				margin-top: 5px;
+				line-height: 18px;
+			}
+		}
+		.timeline-right {
+			margin-left: 10px;
+			width: auto;
+			float: right;
+			position: relative;
+			.product-image {
+				@include transition(opacity .15s ease);
+				&~ .icon {
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+				&.off {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+			.icon {
+				> * {
+					margin: 3px 0 3px 10px;
+					display: block;
+					&+ * {
+						margin-top: 5px;
+					}
+				}
+				.spicon {
+					font-size: 22px;
+					&.spicon-arrow-right {
+						margin-top: 9px;
+					}
+				}
+			}
+		}
+	}
+	.timeline-body {
+		margin-top: 10px;
+		position: relative;
+		.comment-icon {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			font-size: 22px;
+		}
+		.comment {
+			padding-left: 40px;
+			.comment-name {
+				font-weight: 800;
+				a {
+					color: inherit;
+				}
+			}
+		}
+		.image-full {
+			margin-top: 15px;
+			img {
+				width: 100%;
+				max-width: 100%;
+				display: block;
+			}
+		}
+	}
+}
+
+// Search Form
+// -----------------------------------------------------------------------------
+.search-form {
+	text-align: center;
+	.search-category {
+		list-style: none outside;
+		margin: 0;
+		padding: 0;
+		> li {
+			list-style: none outside;
+			margin: 10px 0;
+			padding: 0;
+			width: 20%;
+			position: relative;
+			float: left;
+			display: inline-block;
+			*display: inline;
+			label {
+				cursor: pointer;
+			}
+			.spicon {
+				margin: 0 10px;
+				display: block;
+				font-size: 38px;
+				cursor: pointer;
+				@include transition(color .15s ease-in-out);
+			}
+			input[type="checkbox"] {
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				&:checked ~ .spicon {
+					color: #80B24A;
+				}
+			}
+		}
+	}
+	.search-input {
+		color: $default-color;
+		margin: 15px;
+		select,
+		input[type="text"] {
+			margin: 0;
+			text-align: left;
+		}
+	}
+	.search-button {
+		color: $default-color;
+		margin: 15px 15px 0 15px;
+		button,
+		submit,
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"] {
+			background-color: transparent;
+			border: 0 none;
+			margin: 0 20px;
+			padding: 10px;
+			color: #FFF;
+			font-size: 20px;
+			display: inline-block;
+			*display: inline;
+		}
+	}
+}

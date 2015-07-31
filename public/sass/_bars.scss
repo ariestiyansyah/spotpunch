@@ -1,0 +1,55 @@
+.navbar {
+	background-color: $spotpunch-color;
+	border-bottom: 1px solid darken($spotpunch-color, 5%);
+	height: $bar-base-height;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	.navbar-inner {
+		padding-right: $bar-side-spacing;
+		padding-left: $bar-side-spacing;
+		height: 100%;
+		display: block;
+		position: relative;
+	}
+	.spicon {
+		color: $white-color;
+		padding-top: $bar-side-spacing+1;
+		padding-bottom: $bar-side-spacing+1;
+		font-size: 24px;
+		position: relative;
+		cursor: default;
+		z-index: 15;
+	}
+	a {
+		outline: none;
+		.spicon {
+			cursor: pointer;
+		}
+	}
+	.title {
+		color: $white-color;
+		margin: 0 (-$bar-side-spacing);
+		padding: 0;
+		width: 100%;
+		line-height: $bar-base-height;
+		display: block;
+		position: absolute;
+		left: 0;
+		font-size: 18px;
+		font-weight: $font-weight;
+		text-align: center;
+		white-space: nowrap;
+		cursor: default;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+	}
+	&~.container {
+		margin-top: $bar-base-height;
+	}
+}
