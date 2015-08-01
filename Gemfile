@@ -19,6 +19,7 @@ gem 'carrierwave-azure'
 gem 'azure', '~> 0.6.4'
 gem 'acts_as_votable'
 gem 'devise'
+gem 'mysql2'
 
 group :development, :test do
   gem 'byebug'
