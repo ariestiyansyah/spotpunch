@@ -1,18 +1,79 @@
-<section id="main-content" class="content dashboard">
-  <span class="dashboard-help" onclick="alert('Help Button'); return false;">?</span>
-  <h1 class="dashboard-logo">
-    <i class="spcon spcon-logo"></i>
-    <span>SpotPunch Administrator</span>
-  </h1>
-  <form onsubmit="alert('Form send post'); return false;" class="login-form" action="index.html" method="post">
-    <div class="login-input">
-      <input type="email" name="email" placeholder="Email" />
+<div class="canvas">
+  <!-- Sidebar -->
+  <%= render "layouts/sidebar"%>
+  <!-- Dashboard Content -->
+  <div class="content">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <!-- Left Icon -->
+        <a id="toogle-sidebar" href="#" class="pull-left">
+          <i class="spicon spicon-nav"></i>
+        </a>
+        <!-- Right Icon -->
+        <a href="#" data-toggle="modal" data-target="#full-modal" class="pull-right">
+          <i class="spicon spicon-search"></i>
+        </a>
+        <!-- Header Title -->
+        <h1 class="title">Administrator</h1>
+      </div>
+    </header>
+    <!-- Container -->
+    <div class="container">
+      <!-- Listing -->
+      <!-- Load More -->
+      <div id="loadmore" class="load-more">
+        <a href="#loadmore">LOADMORE</a>
+      </div>
     </div>
-    <div class="login-input">
-      <input type="password" name="password" placeholder="Password" />
+  </div>
+</div>
+<!-- Modal Box -->
+<div class="modal fade" id="full-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= render "modal/search"%>
     </div>
-    <div class="login-button">
-      <input type="submit" value="LOGIN" />
-    </div>
-  </form>
-</section>
+  </div>
+</div>
+<script type="text/javascript">
+(function ($){
+  $('#toogle-sidebar').on('click', function (e) {
+    e.preventDefault();
+    var canvas = $('.canvas').toggleClass('on');
+    $('.container').on('click', function (e) {
+      if (canvas.hasClass('on'))
+      {
+        canvas.removeClass('on');
+      }
+    });
+  });
+  $('.timeline-right').each(function () {
+    var $this = $(this);
+    var image = $this.find('.product-image');
+    if (image.length)
+    {
+      $this.on('click', function (e) {
+        var off;
+        image.addClass('off');
+        if (image.hasClass('off'))
+        {
+          $this.find('.icon').addClass('in');
+          $this.on('mouseout', function () {
+            off = setTimeout(function () {
+              image.removeClass('off');
+              $this.find('.icon').removeClass('in');
+            }, 2500);
+          });
+          if (image.hasClass('off'))
+          {
+            $this.on('mouseover', function () {
+              clearInterval(off);
+            });
+          }
+        }
+      });
+    }
+  });
+})(jQuery);
+</script>

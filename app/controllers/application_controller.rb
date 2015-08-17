@@ -11,6 +11,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_admin! opts={}
+    @user = User.new
+    unless user_signed_in?
+      render "users/sessions/new"
+    end
+  end
+
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, 

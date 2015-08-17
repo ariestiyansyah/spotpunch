@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.3'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -20,8 +19,11 @@ gem 'azure', '~> 0.6.4'
 gem 'acts_as_votable'
 gem 'devise'
 gem 'mysql2'
+gem 'acts_as_follower'
+gem 'public_activity'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
