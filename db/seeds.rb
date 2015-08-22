@@ -3,5 +3,8 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+mall  = Mall.create(name: 'Central Park')
+apple = Brand.create(name:'Apple')
+uniqlo = Brand.create(name:'Uniqlo')
+Store.create(name: 'Uniqlo', mall:mall, brand:uniqlo)
+Store.create(name: 'Apple', mall:mall, brand:apple)

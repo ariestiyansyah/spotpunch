@@ -1,0 +1,44 @@
+<li class="item">
+  <div class="list">
+    <div class="list-image">
+      <%= link_to profile_path(permalink:current_user.username), class: "list-photo" do %>
+          <img src="images/photo/photo02.jpg" alt="photo" />
+          <span class="verify-icon"><i class="spicon spicon-check"></i></span>
+      <% end %>
+    </div>
+    <div class="list-content">
+      <div class="list-header">
+        <div class="list-header-text">
+          <div class="timeline-text1">
+            <%= link_to shop.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
+          </div>
+          <div class="timeline-text2">
+            <a href="#">Macbook Pro Retina Display</a>
+          </div>
+          <div class="timeline-text3">
+            <a href="#">Lotte Shopping Avenue</a>
+          </div>
+        </div>
+        <div class="list-nav list-flip">
+          <div class="flip-container">
+            <div class="flipper">
+              <div class="front">
+                <img src="images/product/product02.jpg" alt="product" />
+              </div>
+              <div class="back">
+                <div class="list-action">
+                  <a href="#"><i class="spicon spicon-like"></i></a>
+                  <a href="#"><i class="spicon spicon-comment"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list-comment spicon spicon-quote">
+    <h4><a href="profile.html">Takeshi Kaneshiro</a></h4>
+    <p>このラップトップは本当に素晴らしいです、私はもうそれなしでは生きすることを想像することはできません</p>
+  </div>
+</li>

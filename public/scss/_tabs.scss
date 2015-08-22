@@ -1,0 +1,69 @@
+//
+// Tabs
+// -----------------------------------------------------------------------------
+
+.tab {
+	list-style: none outside;
+	margin: 0;
+	padding: 0;
+	border-bottom: $tab-border;
+	@extend .clearfix;
+	> li {
+		margin-bottom: -1px;
+		display: block;
+		float: left;
+		position: relative;
+		> a {
+			border: 1px solid transparent;
+			margin-right: 2px;
+			padding: $tab-link-padding;
+			line-height: $tab-link-line-height;
+			display: block;
+			position: relative;
+			&:hover,
+			&:focus {
+				background-color: $tab-link-background-color;
+				border-color: $tab-link-background-color $tab-link-background-color darken($tab-link-background-color, 6.5%) $tab-link-background-color;
+				text-decoration: none;
+			}
+			> img {
+				max-width: none;
+			}
+		}
+		&.active {
+			> a,
+			> a:hover,
+			> a:focus {
+				background-color: $tab-link-background-color-active;
+				border: 1px solid darken($tab-link-background-color, 6.5%);
+				border-bottom-color: transparent;
+				color: $tab-link-color-active;
+				cursor: default;
+			}
+		}
+	}
+	&.tab-justified {
+		width: 100%;
+		> li {
+			width: 1%;
+			display: table-cell;
+			float: none;
+			> a {
+				margin-right: 0;
+				margin-bottom: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+.tab-content {
+	> .tab-pane {
+		display: none;
+		ul.listing {
+			margin-top: -1px;
+		}
+	}
+	> .active {
+		display: block;
+	}
+}

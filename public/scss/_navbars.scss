@@ -1,0 +1,75 @@
+//
+// Navigation Bars
+// -----------------------------------------------------------------------------
+
+.navbar {
+	background-color: $navbar-background-color;
+	color: $navbar-color;
+	border-bottom: 1px solid darken($navbar-background-color, 5%);
+	height: $navbar-height;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	.navbar-inner {
+		padding-right: $navbar-spacing-side;
+		padding-left: $navbar-spacing-side;
+		height: 100%;
+		display: block;
+		position: relative;
+		.pull-left + .pull-left {
+			margin-left: 10px;
+		}
+		.pull-right + .pull-right {
+			margin-right: 10px;
+		}
+	}
+	.spicon {
+		color: $navbar-color;
+		padding-top: $navbar-spacing-side + 1;
+		padding-bottom: $navbar-spacing-side + 1;
+		font-size: $navbar-icon-size;
+		position: relative;
+		cursor: default;
+		z-index: 15;
+	}
+	a {
+		text-decoration: none;
+		outline: none;
+		.spicon {
+			cursor: pointer;
+		}
+	}
+	.navbar-title {
+		color: $navbar-title-color;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		line-height: $navbar-height;
+		display: block;
+		position: absolute;
+		left: 0;
+		font-size: $navbar-title-size;
+		font-weight: $font-weight-light;
+		text-align: center;
+		white-space: nowrap;
+		cursor: default;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		> span {
+			display: block;
+		}
+	}
+	&~.container {
+		margin-top: $navbar-height;
+	}
+}
+@media (min-width: 768px) {
+	.navbar {
+		margin-left: $sidebar-width;
+	}
+}

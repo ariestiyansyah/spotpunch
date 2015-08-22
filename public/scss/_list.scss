@@ -1,0 +1,197 @@
+//
+// List Style
+// -----------------------------------------------------------------------------
+
+ul.listing {
+	list-style: none outside;
+	margin: 0;
+	padding: 0;
+	> li {
+		list-style: none outside;
+		margin: 0;
+		padding: 0;
+	}
+}
+.listing {
+	border-top: $default-border;
+	border-bottom: $default-border;
+	position: relative;
+	.item {
+		border-bottom: $default-border;
+		padding: $list-item-padding;
+		display: block;
+		&:last-child,
+		&:last-of-type {
+			border-bottom: 0;
+		}
+	}
+}
+.list {
+	width: 100%;
+	display: table;
+}
+.list-content,
+.list-image,
+.list-button {
+	display: table-cell;
+	vertical-align: top;
+	&.align-middle {
+		vertical-align: middle;
+	}
+}
+.list-image,
+.list-button {
+	width: 1%;
+}
+.list-photo,
+.list-icon,
+.list-logo {
+	margin-right: 15px;
+	width: 64px;
+	display: block;
+	position: relative;
+	&.list-photo-right,
+	&.list-logo-right {
+		margin-right: 0;
+		margin-left: 15px;
+	}
+	&.small {
+		width: 48px;
+	}
+}
+.list-icon {
+	&.spicon {
+		font-size: 64px;
+	}
+	&.small {
+		.spicon {
+			color: #CBCBCB;
+			font-size: 48px;
+		}
+	}
+}
+.list-header {
+	@extend .list;
+	.list-header-text {
+		white-space: unset;
+	}
+	~ .list-body {
+		margin-top: 5px;
+	}
+}
+.list-nav {
+	@extend .list-content;
+	color: inherit !important;
+	width: 32px;
+	position: relative;
+	text-align: right;
+	vertical-align: middle;
+	&.list-flip {
+		padding-left: 15px;
+		width: 64px;
+		vertical-align: top;
+		.flip-container {
+			width: 64px;
+			height: 64px;
+			@include perspective(1000);
+			@include transform(perspective(1000px));
+			@include transform-style(preserve-3d);
+			&:hover .back,
+			&.hover .back {
+				@include transform(rotateY(0deg));
+			}
+			&:hover .front,
+			&.hover .front {
+				@include transform(rotateY(180deg));
+			}
+			.flipper {
+				position: relative;
+				@include perspective(1000px);
+				@include transition(0.6s);
+				@include transform-style(preserve-3d);
+			}
+			.front,
+			.back {
+				width: 64px;
+				height: 64px;
+			}
+			.front,
+			.back {
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include backface-visibility(hidden);
+				@include transition(0.6s);
+				@include transform-style(preserve-3d);
+				@include transform(rotateY(0deg));
+			}
+			.front {
+				@include transform(rotateY(0deg));
+				z-index: 2;
+			}
+			.back {
+				@include transform(rotateY(-180deg));
+			}
+		}
+	}
+	.spicon {
+		font-size: 22px;
+	}
+}
+.list-body p:last-of-type {
+	margin-bottom: 0;
+}
+.list-blog-image {
+	margin-top: 15px;
+	img {
+		width: 100%;
+	}
+}
+.list-action {
+	padding: 5px 0;
+	position: relative;
+	text-align: center;
+	> a {
+		color: $color-black;
+		margin: 0 auto;
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		display: block;
+		font-size: 22px;
+		@include transition(color .25s ease);
+		&+ a {
+			margin-top: 10px;
+		}
+		&.active {
+			color: #B63131;
+		}
+	}
+}
+.list-comment {
+	margin-top: $spacing-paragraph;
+	position: relative;
+	&.spicon {
+		padding-left: 40px;
+		line-height: $default-line-height;
+		display: block;
+		&:before {
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			font-size: 23px;
+		}
+	}
+	h4 {
+		margin: 0;
+		line-height: $default-line-height;
+		font-size: 12px;
+		font-weight: $font-weight-extrabold;
+		a {
+			color: inherit;
+		}
+	}
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}

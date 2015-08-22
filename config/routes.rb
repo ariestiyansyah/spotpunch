@@ -13,5 +13,10 @@ Rails.application.routes.draw do
     get 'import'                      => 'administrators#import',               on: :collection
     collection { post :import }
   end
-
+  
+  resources :malls, only:[] do
+    get   ':name/:permalink'          => 'stores#show',                         on: :collection, as: :show
+  end
+  
+  get   '/:permalink'                 => 'home#profile',                        as: "profile",              :constraints => { :name => /[^\/]+/ }
 end

@@ -1,0 +1,63 @@
+//
+// Icons
+// -----------------------------------------------------------------------------
+
+@font-face {
+	font-family: '#{$icon-font-name}';
+	src: url('#{$default-font-path}/#{$icon-prefix}/#{$icon-font-name}.eot');
+	src: url('#{$default-font-path}/#{$icon-prefix}/#{$icon-font-name}.eot?#iefix') format('embedded-opentype'),
+		url('#{$default-font-path}/#{$icon-prefix}/#{$icon-font-name}.woff')        format('woff'),
+		url('#{$default-font-path}/#{$icon-prefix}/#{$icon-font-name}.ttf')         format('truetype'),
+		url('#{$default-font-path}/#{$icon-prefix}/#{$icon-font-name}.svg')         format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.#{$icon-prefix} {
+	display: inline-block;
+	line-height: 1;
+	transform: translate(0, 0);
+	text-decoration: none;
+	text-transform: none;
+	speak: none;
+	&:before {
+		font: normal normal normal #{$icon-size}/1 #{$icon-font-name};
+		font-size: inherit;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	&-logo:before { content: "\e600" }
+	&-nav:before  { content: "\e601" }
+	&-search:before  { content: "\e602" }
+	&-home:before  { content: "\e603" }
+	&-activity:before  { content: "\e604" }
+	&-punch:before  { content: "\e605" }
+	&-spoting:before  { content: "\e606" }
+	&-spotter:before  { content: "\e607" }
+	&-promotion:before  { content: "\e608" }
+	&-wishlist:before  { content: "\e609" }
+	&-setting:before  { content: "\e60a" }
+	&-login:before  { content: "\e60b" }
+	&-logout:before  { content: "\e60c" }
+	&-like:before  { content: "\e60d" }
+	&-comment:before  { content: "\e60e" }
+	&-quote:before  { content: "\e60f" }
+	&-arrow-up:before  { content: "\e610" }
+	&-arrow-right:before  { content: "\e611" }
+	&-arrow-down:before  { content: "\e612" }
+	&-arrow-left:before  { content: "\e613" }
+	&-check:before  { content: "\e614" }
+	&-plus:before  { content: "\e615" }
+	&-minus:before  { content: "\e616" }
+	&-food:before { content: "\e617" }
+	&-bar:before { content: "\e618" }
+	&-book:before { content: "\e619" }
+	&-fashion:before { content: "\e61a" }
+	&-coffe:before { content: "\e61b" }
+	&-mall:before { content: "\e61c" }
+	&-news:before { content: "\e61d" }
+	&-info:before { content: "\e61e" }
+	&-map:before { content: "\e61f" }
+}

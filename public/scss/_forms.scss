@@ -1,0 +1,166 @@
+//
+// Forms
+// -----------------------------------------------------------------------------
+
+input,
+textarea,
+button,
+select {
+	font-family: $default-font-family;
+	font-size: $default-font-size;
+}
+select,
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="color"] {
+	background-color: $color-white;
+	border: $default-border;
+	color: inherit;
+	margin-bottom: $spacing-field;
+	padding: 0 15px;
+	width: 100%;
+	height: 40px;
+	line-height: $default-line-height;
+	outline: none;
+	-webkit-appearance: none;
+	@include border-radius(3px);
+}
+input[type="search"] {
+	padding: 0 15px;
+	font-size: 16px;
+	@include border-radius(20px);
+}
+input[type="search"]:focus {
+	text-align: left;
+}
+textarea {
+	height: auto;
+}
+select {
+	background-color: darken($color-white, 2.75%);
+	font-size: 12px;
+	padding: 0 10px;
+}
+button,
+.button {
+	background: $button-background-color;
+	border: 1px solid transparent;
+	color: $button-color;
+	margin-bottom: 0;
+	padding: 5px 10px;
+	line-height: 18px;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-appearance: none;
+	@include border-radius($button-border-radius);
+	@include box-shadow(inset 0 -1px 0 lighten($button-background-color, 5%));
+	@include transition(all .25s ease);
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	&:hover,
+	&:focus {
+		color: $button-color;
+		text-decoration: none;
+	}
+	&:active {
+	}
+	&:hover {
+		background: $button-background-color-hover;
+		border: 1px solid transparent;
+		color: $button-color-hover;
+		-webkit-appearance: none;
+		@include box-shadow(inset 0 -1px 0 lighten($button-background-color-hover, 5%));
+	}
+	.spicon {
+		margin-right: 5px;
+		font-size: 11px;
+	}
+}
+.button-spoting {
+	background: $color-spotpunch;
+	color: $color-white;
+	@include box-shadow(inset 0 -1px 0 lighten($color-spotpunch, 5%));
+	&:hover {
+		background: darken($color-spotpunch, 5%);
+		color: $color-white;
+		@include box-shadow(inset 0 -1px 0 lighten($color-spotpunch, 5%));
+	}
+}
+
+// Search form modal box
+// -----------------------------------------------------------------------------
+.search-form {
+	text-align: center;
+	.search-category {
+		width: 100%;
+		display: table;
+		> * {
+			padding: 10px 0;
+			width: 1%;
+			display: table-cell;
+			text-align: center;
+			label {
+				cursor: pointer;
+			}
+			.spicon {
+				margin: 0 10px;
+				display: block;
+				font-size: 38px;
+				cursor: pointer;
+				@include transition(color .15s ease-in-out);
+			}
+			input[type="checkbox"] {
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				z-index: -1;
+				&:checked ~ .spicon {
+					color: #80B24A;
+				}
+			}
+		}
+	}
+	.search-input {
+		color: $default-text-color;
+		margin: 15px;
+		select,
+		input[type="text"] {
+			margin: 0;
+			text-align: left;
+		}
+	}
+	.search-button {
+		margin: 15px 15px 0 15px;
+		button,
+		submit,
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"] {
+			background-color: transparent;
+			border: 0 none;
+			margin: 0 20px;
+			padding: 10px;
+			color: $color-white;
+			font-size: 20px;
+			display: inline-block;
+			*display: inline;
+		}
+	}
+}

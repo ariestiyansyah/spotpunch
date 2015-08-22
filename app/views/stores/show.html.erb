@@ -1,0 +1,159 @@
+<!-- Canvas -->
+<div class="canvas">
+  <!-- Sidebars -->
+  <%= render "layouts/sidebar"%>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Header -->
+    <%= render partial: "container/header", locals: { title: @store.mall.name }%>
+    <!-- Container -->
+    <div class="container">
+      <div class="shop">
+        <!-- Carousel -->
+        <div class="carousel" data-plugin="carousel">
+          <img src="/images/carousel/carusel01.jpg" alt="carousel" />
+          <img src="/images/carousel/carusel02.jpg" alt="carousel" />
+          <img src="/images/carousel/carusel03.jpg" alt="carousel" />
+          <img src="/images/carousel/carusel04.jpg" alt="carousel" />
+          <img src="/images/carousel/carusel05.jpg" alt="carousel" />
+          <img src="/images/carousel/carusel06.jpg" alt="carousel" />
+        </div>
+
+        <!-- Listing -->
+        <div class="listing">
+          <div class="item">
+            <div class="list">
+              <div class="list-image">
+                <span class="list-icon small">
+                  <i class="spicon spicon-fashion"></i>
+                </span>
+              </div>
+              <div class="list-content align-middle">
+                <div class="list-header-text">
+                  <div class="timeline-text">
+                    <span><%= @store.name %></span>
+                  </div>
+                  <div class="timeline-text2">
+                    <span>Fashion</span>
+                  </div>
+                </div>
+              </div>
+              <div class="list-button align-middle">
+                <a class="button" href="#"><i class="spicon spicon-plus"></i> SPOT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-tab">
+          <div class="shop-menu-title">
+            <h3>SHOP</h3>
+          </div>
+          <div class="shop-menu-link">
+            <ul class="tab" role="tablist">
+              <li class="active" role="presentation">
+                <a href="#shop-index" aria-controls="shop-index" role="tab" data-toggle="tab" data-title="SHOP"><i class="spicon spicon-mall"></i></a>
+              </li>
+              <li role="presentation">
+                <a href="#shop-news" aria-controls="shop-news" role="tab" data-toggle="tab" data-title="NEWS"><i class="spicon spicon-news"></i></a>
+              </li>
+              <li role="presentation">
+                <a href="#shop-detail" aria-controls="shop-detail" role="tab" data-toggle="tab" data-title="DETAILS"><i class="spicon spicon-info"></i></a>
+              </li>
+              <li role="presentation">
+                <a href="http://www.google.co.id/maps" target="_blank"><i class="spicon spicon-map"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="shop-index">
+            <ul class="shop-product">
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-01.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-02.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-03.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-04.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-05.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-06.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-07.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-08.jpg" alt="shop product" /></a></li>
+              <li class="item"><a href="#"><img src="/images/shop/shop-product-09.jpg" alt="shop product" /></a></li>
+            </ul>
+            <div class="loadmore">
+              <a href="#loadmore">LOADMORE</a>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="shop-news">
+            <ul class="listing">
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="shop-news-title">Build a Global Company</h2>
+                    <div class="shop-news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="shop-news-title">Maintenance of Our Store</h2>
+                    <div class="shop-news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="shop-news-title">Winter Collection 50% Discount</h2>
+                    <div class="shop-news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+            </ul>
+            <div class="loadmore">
+              <a href="#loadmore">LOADMORE</a>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="shop-detail">
+            <div class="shop-content">
+              <h3 class="title">Central Park</h3>
+              <p>Unit U15 - Upper Ground Level<br />Jl. Let.Jend. S. Parman Kav.21, Slipi</p>
+              <table class="table">
+                <tr>
+                  <td>Opening Hours</td>
+                  <td class="spacer"> : </td>
+                  <td>10:00 am – 10:00 pm</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td class="spacer"> : </td>
+                  <td>021-5609706</td>
+                </tr>
+              </table>
+              <p>Uniqlo Co., Ltd. (株式会社ユニクロ Kabushiki-gaisha yunikuro?) (pronounced "YOU-nee-klo" in English) is a Japanese casual wear designer, manufacturer and retailer. The company has been a wholly owned subsidiary of Fast Retailing Co., Ltd. since November 2005.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :javascript_content do %>
+  <%= javascript_include_tag 'libs/jquery/jquery.min' %>
+  <%= javascript_include_tag 'libs/bootstrap/transition' %>
+  <%= javascript_include_tag 'libs/bootstrap/modal' %>
+  <%= javascript_include_tag 'libs/bootstrap/tab' %>
+  <%= javascript_include_tag 'libs/plugins/carousel' %>
+  <%= javascript_include_tag 'spotpunch' %>
+<% end %>

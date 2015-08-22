@@ -1,0 +1,197 @@
+//
+// Base
+// -----------------------------------------------------------------------------
+
+body {
+	background-color: $default-background-color;
+	color: $default-text-color;
+	line-height: $default-line-height;
+	font-family: $default-font-family;
+	font-size: $default-font-size;
+	font-weight: $default-font-weight;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	margin-bottom: $spacing-paragraph;
+	line-height: 1;
+}
+h1,
+.h1 {
+	margin-bottom: ceil($spacing-paragraph + ($spacing-paragraph / 2));
+	font-size: $default-font-size * 3;
+}
+h2,
+.h2 {
+	margin-bottom: floor($spacing-paragraph + ($spacing-paragraph / 3));
+	font-size: $default-font-size * 2.5;
+}
+h3,
+.h3 {
+	font-size: $default-font-size * 2;
+}
+h4,
+.h4 {
+	font-size: $default-font-size * 1.5;
+}
+h5,
+.h5 {
+	margin-bottom: ceil($spacing-paragraph - ($spacing-paragraph * 0.5));
+	font-size: $default-font-size + 2;
+	line-height: $default-font-size + 8;
+}
+h6,
+.h6 {
+	margin-bottom: ceil($spacing-paragraph - ($spacing-paragraph * 0.5));
+	font-size: $default-font-size;
+	line-height: $default-font-size + 8;
+}
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: $spacing-paragraph;
+}
+p {
+	margin: 0 0 $spacing-paragraph 0;
+}
+a {
+	color: $default-link-color;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	&:focus {
+		color: $default-link-color;
+	}
+	&:active {
+		color: darken($default-link-color, 10%);
+	}
+}
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.hidden {
+	display: none;
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+.align-left {
+	text-align: left;
+}
+.clearfix {
+	@include clearfix();
+}
+.fade {
+	opacity: 0;
+	@include transition(opacity .15s linear);
+	&.in {
+		opacity: 1;
+	}
+}
+.canvas {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	@include transform(translateX(0px));
+	@include transition(all 0.5s ease);
+	&.on {
+		@include transform(translateX(300px));
+	}
+}
+.content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+.container {
+	background: $default-background-color;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	z-index: 1;
+	-webkit-overflow-scrolling: touch;
+}
+.verify-icon {
+	background: $color-white;
+	color: $color-white;
+	margin-top: -9px;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	position: absolute;
+	top: 50%;
+	right: -9px;
+	text-align: center;
+	@include border-radius(9px);
+	&:before {
+		background: #80B24A;
+		margin-top: -7px;
+		margin-left: -7px;
+		width: 14px;
+		height: 14px;
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include border-radius(7px);
+	}
+	.spicon {
+		margin: -5px 0 0 -5px;
+		width: 10px;
+		height: 10px;
+		line-height: 10px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 10px;
+	}
+}
+.loadmore {
+	border-bottom: $default-border;
+	color: $loadmore-color;
+	font-size: $loadmore-font-size;
+	text-align: center;
+	a {
+		color: $loadmore-color;
+		height: $loadmore-height;
+		line-height: $loadmore-height;
+		display: block;
+		@include transition(color .25s ease);
+		&:hover {
+			color: $loadmore-color-hover;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.visible-phone {
+		display: none;
+	}
+	.canvas {
+		@include transition(all 0s ease);
+		&.on {
+			@include transform(translateX(0px));
+		}
+	}
+	.container {
+		margin-left: $sidebar-width;
+	}
+}

@@ -11,6 +11,13 @@
 <body>
 
 <%= yield %>
-
+<div class="modal fade" id="spotpunch-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= render "modal/search"%>
+    </div>
+  </div>
+</div>
+<%= content_for?(:javascript_document) %>
 </body>
 </html>

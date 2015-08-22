@@ -1,0 +1,102 @@
+//
+// Define Variables
+// -----------------------------------------------------------------------------
+
+// Color variables
+// -----------------------------------------------------------------------------
+$color-spotpunch : #B63131 !default;
+$color-white     : #FFF !default;
+$color-black     : #000 !default;
+$color-blue      : #428BCA !default;
+
+// Font weight variables
+// -----------------------------------------------------------------------------
+$font-weight-light     : 300 !default;
+$font-weight-normal    : 400 !default;
+$font-weight-bold      : 600 !default;
+$font-weight-extrabold : 800 !default;
+
+// Default variables
+// -----------------------------------------------------------------------------
+$default-font-path        : '../fonts' !default;
+$default-font-family      : 'Open Sans', sans-serif !default;
+$default-font-size        : 12px !default;
+$default-font-weight      : $font-weight-light !default;
+$default-line-height      : ($default-font-size * 1.75) !default;
+$default-background-color : $color-white !default;
+$default-text-color       : $color-black !default;
+$default-link-color       : $color-blue !default;
+$default-border-size      : 1px;
+$default-border-type      : solid;
+$default-border-color     : darken($color-white, 9.5%) !default;
+$default-border           : $default-border-size $default-border-type $default-border-color !default;
+$default-border-radius    : 6px !default;
+
+// Forms variables
+// -----------------------------------------------------------------------------
+$button-background-color       : #007042;
+$button-background-color-hover : darken($button-background-color, 5%);
+$button-color                  : $color-white;
+$button-color-hover            : $color-white;
+$button-border-radius          : 5px;
+$button-font-size              : $default-font-size;
+
+// Spacing variables
+// -----------------------------------------------------------------------------
+$spacing-paragraph : 10px;
+$spacing-field     : 15px;
+
+// Sidebar variables
+// -----------------------------------------------------------------------------
+$sidebar-background-color : #353535;
+$sidebar-color            : $color-white;
+$sidebar-link-color       : $color-white;
+$sidebar-link-color-hover : #FF0;
+$sidebar-width            : 300px;
+$sidebar-font-size        : 14px;
+
+// Navigation bar variables
+// -----------------------------------------------------------------------------
+$navbar-background-color : $color-spotpunch;
+$navbar-color            : $color-white;
+$navbar-height           : 48px;
+$navbar-spacing-side     : 10px;
+$navbar-icon-size        : 24px;
+$navbar-title-color      : $color-white;
+$navbar-title-size       : 18px;
+
+// Listing variables
+// -----------------------------------------------------------------------------
+$list-item-padding : 15px;
+
+// Load more variables
+// -----------------------------------------------------------------------------
+$loadmore-font-size   : 15px;
+$loadmore-color       : #626262;
+$loadmore-color-hover : $color-spotpunch;
+$loadmore-height      : 60px;
+
+// Modal variables
+// -----------------------------------------------------------------------------
+$modal-margin              : 10px;
+$modal-padding             : 15px;
+$modal-border              : 1px solid rgba(0, 0, 0, .2);
+$modal-border-radius       : 3px;
+$modal-box-shadow-small    : 0 3px 9px rgba(0, 0, 0, .5);
+$modal-box-shadow-large    : 0 5px 15px rgba(0, 0, 0, .5);
+$modal-background-backdrop : $color-black;
+
+// Tabs variables
+// -----------------------------------------------------------------------------
+$tab-border                       : $default-border;
+$tab-link-background-color        : #EEE;
+$tab-link-background-color-active : #FFF;
+$tab-link-color-active            : #555;
+$tab-link-padding                 : 10px 15px;
+$tab-link-line-height             : 18px;
+
+// Icon variables
+// -----------------------------------------------------------------------------
+$icon-font-name : 'SpotPunchIcon';
+$icon-prefix    : 'spicon';
+$icon-size      : $default-font-size;

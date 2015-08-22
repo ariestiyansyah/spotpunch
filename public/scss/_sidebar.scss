@@ -1,0 +1,96 @@
+//
+// Sidebar
+// -----------------------------------------------------------------------------
+
+.sidebar {
+	background-color: $sidebar-background-color;
+	color: $sidebar-color;
+	width: $sidebar-width;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -$sidebar-width;
+	bottom: 0;
+	font-size: $sidebar-font-size;
+	overflow: hidden;
+	z-index: 20;
+	@include box-shadow(inset -16px 0 8px -8px rgba(0, 0, 0, 0.4));
+	.sidebar-inner {
+		padding: 25px;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: auto;
+	}
+	ul.navigation {
+		list-style: none outside;
+		margin: 0;
+		padding: 0;
+		> li {
+			@extend ul.navigation;
+			&.divider {
+				border-bottom: 1px solid darken($sidebar-background-color, 10%);
+				margin-top: 15px;
+				margin-bottom: 15px;
+				height: 0px;
+				@include box-shadow(0 1px 0 lighten($sidebar-background-color, 10%));
+			}
+			&.active > a {
+				color: $sidebar-link-color-hover;
+				text-shadow: 1px -1px 1px rgba(0, 0, 0, 0.5);
+				text-decoration: none;
+			}
+			> a,
+			> span {
+				color: $sidebar-link-color;
+				padding: 15px 0;
+				display: block;
+				text-decoration: none;
+				@include transition(all .25s ease-in-out);
+				&:hover {
+					color: $sidebar-link-color-hover;
+					text-shadow: 1px -1px 1px rgba(0, 0, 0, 0.5);
+					text-decoration: none;
+				}
+				.spicon {
+					margin-right: 15px;
+					font-size: 18px;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+.sidebar-profile {
+	border-bottom: 1px solid darken($sidebar-background-color, 10%);
+	padding-bottom: 25px;
+	margin-bottom: 10px;
+	@include box-shadow(0 1px 0 lighten($sidebar-background-color, 10%));
+	@extend .clearfix;
+}
+.sidebar-profile-image {
+	margin-right: 15px;
+	float: left;
+}
+.sidebar-profile-body {
+	color: $color-white;
+	margin-top: 5px;
+	overflow: hidden;
+	font-size: 12px;
+	> a {
+		color: $color-white;
+	}
+}
+.sidebar-profile-name {
+	color: $color-white !important;
+	margin-bottom: 5px;
+	line-height: 20px;
+	font-size: 18px;
+}
+@media (min-width: 768px) {
+	.sidebar {
+		left: 0;
+	}
+}

@@ -1,0 +1,339 @@
+//
+// Page Style
+// -----------------------------------------------------------------------------
+
+// Dahsboard
+// -----------------------------------------------------------------------------
+.dashboard {
+	background: $color-spotpunch;
+	color: $color-white;
+	margin: 0;
+	.dashboard-container {
+		margin: 30px 0;
+		@include transition-duration(.5s);
+	}
+	.dashboard-help {
+		background: $color-white;
+		color: $color-spotpunch;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		position: fixed;
+		top: 15px;
+		right: 20px;
+		font-size: 14px;
+		font-weight: 300;
+		text-align: center;
+		z-index: 1;
+		cursor: pointer;
+		outline: none;
+		@include border-radius(30px);
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+	}
+	.dashboard-logo {
+		margin: 0 0 40px 0;
+		padding: 0;
+		line-height: 28px;
+		font-size: 24px;
+		font-weight: 300;
+		text-align: center;
+		cursor: default;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		.spicon-logo {
+			margin-bottom: 25px;
+			font-size: 86px;
+		}
+		span {
+			display: block;
+		}
+	}
+	.login-form {
+		margin: 0 auto;
+		max-width: 768px;
+	}
+	.login-input {
+		color: $color-spotpunch;
+		margin: 25px 75px;
+		position: relative;
+		input {
+			border: 1px solid $color-white;
+			margin: 0;
+			font-size: 15px;
+		}
+	}
+	.login-button {
+		margin: 15px 0;
+		text-align: center;
+		button,
+		submit,
+		input[type="button"],
+		input[type="submit"] {
+			background: transparent;
+			border: 0 none;
+			color: $color-white;
+			padding: 3px 10px;
+			width: auto;
+			font-size: 15px;
+		}
+	}
+	.login-link {
+		border-top: 1px solid $color-white;
+		margin: 15px 75px;
+		padding: 10px 0;
+		.login-row {
+			width: 100%;
+			display: table;
+			> * {
+				border-left: 1px solid $color-white;
+				width: 50%;
+				display: table-cell;
+				text-align: center;
+				&:first-of-type {
+					border-left: 0 none;
+				}
+			}
+		}
+		a {
+			color: $color-white;
+			padding: 0 7px;
+			line-height: 27px;
+			display: inline-block;
+		}
+	}
+}
+.spotpunch-intro {
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+@media (max-width: 767px) {
+	.dashboard {
+		.login-input,
+		.login-link {
+			margin-right: 35px;
+			margin-left: 35px;
+		}
+	}
+}
+
+// Timeline
+// -----------------------------------------------------------------------------
+[class*="timeline-text"] {
+	line-height: 21px;
+	a {
+		color: inherit;
+		@include transition(color .25s ease);
+		&:hover {
+			color: $color-spotpunch;
+		}
+	}
+}
+.timeline-text {
+	font-size: 16px;
+	font-weight: $font-weight-extrabold;
+}
+.timeline-text1 {
+	font-size: 12px;
+	font-weight: $font-weight-extrabold;
+}
+.timeline-text2 {
+	font-size: 15px;
+}
+.timeline-text3 {
+	line-height: 22px;
+	font-size: 9px;
+}
+.timeline-text4 {
+	line-height: 22px;
+}
+
+// Profile
+// -----------------------------------------------------------------------------
+.profile {
+	margin: 0;
+}
+.profile-header {
+	border-bottom: $default-border;
+	padding: 15px;
+	width: 100%;
+	display: table;
+	> * {
+		display: table-cell;
+		vertical-align: top;
+		&.profile-image {
+			padding-right: 15px;
+			width: 128px;
+		}
+		&.profile-info {
+			vertical-align: middle;
+		}
+	}
+	&~ .tab {
+		margin-top: -1px;
+	}
+}
+.profile-info {
+	vertical-align: middle;
+	.name {
+		margin: 0 0 5px 0;
+		line-height: 21px;
+		font-size: 18px;
+		font-weight: $font-weight-extrabold;
+	}
+}
+.profile-body {
+	padding: 15px;
+}
+.profile-tab {
+	.tab > li {
+		> a {
+			border: 0 none;
+			color: $color-black;
+			font-size: 15px;
+			font-weight: $font-weight-extrabold;
+			text-align: left;
+			&:focus,
+			&:hover {
+				background: transparent;
+				border: 0 none;
+				color: $color-spotpunch;
+			}
+			> .count {
+				display: block;
+				font-weight: $font-weight-normal;
+			}
+		}
+		&.active > a {
+			background: transparent;
+			color: $color-spotpunch;
+			font-size: 15px;
+			font-weight: $font-weight-extrabold;
+			&:focus,
+				&:hover {
+				background: transparent;
+				color: $color-spotpunch;
+			}
+			> .count {
+				display: block;
+				font-weight: $font-weight-normal;
+			}
+		}
+	}
+	.count {
+		display: block;
+		font-weight: $font-weight-normal;
+	}
+}
+@media (max-width: 767px) {
+	.profile-header,
+	.profile-body {
+		padding: 0;
+	}
+}
+
+// Shop
+// -----------------------------------------------------------------------------
+.shop {
+	.carousel {
+		margin: 0;
+	}
+}
+.shop-tab {
+	border-bottom: $default-border;
+	width: 100%;
+	display: table;
+	.shop-menu-title,
+	.shop-menu-link {
+		padding: 15px;
+		width: 60%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.shop-menu-title h3 {
+		color: $color-spotpunch;
+		margin: 0;
+		font-weight: $font-weight-extrabold;
+		white-space: pre;
+	}
+	.shop-menu-link {
+		width: 40%;
+		.tab {
+			border: 0 none;
+			float: right;
+			& > li {
+				margin: 0 0 0 15px;
+				&:first-child {
+					margin: 0;
+				}
+				a {
+					border: 0 none;
+					color: $color-black;
+					margin: 0;
+					padding: 0;
+					&:hover,
+					&:focus {
+						background: none;
+						color: $color-black;
+					}
+					& + * {
+						margin-left: 15px;
+					}
+					.spicon {
+						font-size: 18px;
+					}
+				}
+				&.active > a {
+					color: $color-spotpunch;
+				}
+			}
+		}
+	}
+}
+.shop-content {
+	padding: 15px;
+	h3.title {
+		margin: 0 0 5px 0;
+		font-size: 15px;
+	}
+}
+ul.shop-product {
+	list-style: none outside;
+	> li {
+		@extend ul.shop-product;
+	}
+}
+.shop-product {
+	margin: 0 0 0 -1px;
+	padding: 0;
+	@extend .clearfix;
+	.item {
+		border: $default-border;
+		border-width: 0 0 1px 1px;
+		margin: 0;
+		width: 33.3333%;
+		float: left;
+		text-align: center;
+		a {
+			text-decoration: none;
+			@include transition(opacity .25s ease);
+			&:hover {
+				opacity: .75;
+			}
+		}
+	}
+}
+h2.shop-news-title {
+	margin: 0 0 10px 0;
+	font-size: 15px;
+	font-weight: $font-weight-extrabold;
+}
+.shop-news-intro {
+	line-height: 18px;
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+

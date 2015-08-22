@@ -5,217 +5,55 @@
   <!-- Dashboard Content -->
   <div class="content">
     <!-- Header -->
-    <header class="navbar">
-      <div class="navbar-inner">
-        <!-- Left Icon -->
-        <a id="toogle-sidebar" href="#" class="pull-left">
-          <i class="spicon spicon-nav"></i>
-        </a>
-
-        <!-- Right Icon -->
-        <a href="#" data-toggle="modal" data-target="#full-modal" class="pull-right">
-          <i class="spicon spicon-search"></i>
-        </a>
-
-        <!-- Header Title -->
-        <h1 class="title">TIMELINE</h1>
-      </div>
-    </header>
+    <%= render partial: "container/header", locals: { title: "TIMELINE" }%>
 
     <!-- Container -->
     <div class="container">
       <!-- Listing -->
       <ul class="listing">
-        <li>
-          <!-- Timeline -->
-          <div class="timeline">
-            <div class="timeline-header">
-              <a href="profile.html" class="timeline-photo">
-                <img src="images/photo.png" alt="photo" />
-                <span class="verify"><i class="spicon spicon-check"></i></span>
+        <%= render partial: "container/shop", locals: { shop: @apple }%>
+        <%= render partial: "container/official_shop", locals: { shop: @uniqlo }%>
+        <li class="item">
+          <div class="list">
+            <div class="list-image">
+              <a href="#" class="list-logo">
+                <img src="/images/logo/logo02.jpg" alt="logo" />
               </a>
-              <div class="timeline-title">
-                <!--<div class="icon">-->
-                <div class="timeline-right">
-                  <div class="product-image">
-                    <img src="images/image.png" alt="image" />
-                  </div>
-                  <div class="icon fade">
-                    <a href="#"><i style="color: #B63131;" class="spicon spicon-like"></i></a>
-                    <a href="#"><i class="spicon spicon-comment"></i></a>
-                  </div>
-                </div>
-                <div class="store">
-                  <a href="#">STARBUCKS</a>
-                </div>
-                <div class="name">
-                  <a href="#">Cappuccino Coffee</a>
-                </div>
-                <div class="mall">
-                  <a href="#">Summarecon Mall Serpong</a>
-                </div>
-              </div>
             </div>
-            <div class="timeline-body">
-              <i class="spicon spicon-quote comment-icon"></i>
-              <div class="comment">
-                <div class="comment-name">
-                  <a href="profile.html">Kim Tae Yeon</a>
+            <div class="list-content">
+              <div class="list-header">
+                <div class="list-header-text">
+                  <div class="timeline-text1">
+                    <a href="#">Blog</a>
+                  </div>
+                  <div class="timeline-text2">
+                    <a href="#">Midnight Sale</a>
+                  </div>
                 </div>
-                <div>Enjoy my morning and lighten up my day with a cup of Cappuccino Coffee from Starbucks :)</div>
+                <a class="list-nav" href="#"><i class="spicon spicon-arrow-right"></i></a>
+              </div>
+              <div class="list-body">
+                <p>"Big wigs and stilt dresses would be fun" - blogger @redpoppyzuz tell #HMLife about the time period she would travel back through history to experience. Read the full story on hm.com/life. Photo by: @le21eme</p>
               </div>
             </div>
           </div>
-        </li>
-        <li>
-          <!-- Timeline -->
-          <div class="timeline">
-            <div class="timeline-header">
-              <a href="profile.html" class="timeline-photo">
-                <img src="images/photo.png" alt="photo" />
-                <span class="verify"><i class="spicon spicon-check"></i></span>
-              </a>
-              <div class="timeline-title">
-                <div class="timeline-right">
-                  <div class="product-image">
-                    <img src="images/image.png" alt="image" />
-                  </div>
-                  <div class="icon fade">
-                    <a href="#"><i style="color: #B63131;" class="spicon spicon-like"></i></a>
-                    <a href="#"><i class="spicon spicon-comment"></i></a>
-                  </div>
-                </div>
-                <div class="store">
-                  <a href="#">APPLE</a>
-                </div>
-                <div class="name">
-                  <a href="#">Macbook Pro Retina Display</a>
-                </div>
-                <div class="mall">
-                  <a href="#">Lotte Shopping Avenue</a>
-                </div>
-              </div>
-            </div>
-            <div class="timeline-body">
-              <i class="spicon spicon-quote comment-icon"></i>
-              <div class="comment">
-                <div class="comment-name">
-                  <a href="profile.html">Takeshi Kaneshiro</a>
-                </div>
-                <div>このラップトップは本当に素晴らしいです、私はもうそれなしでは生きすることを想像することはできません</div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <!-- Timeline -->
-          <div class="timeline">
-            <div class="timeline-header">
-              <a href="profile.html" class="timeline-photo">
-                <img src="images/photo.png" alt="photo" />
-              </a>
-              <div class="timeline-title">
-                <div class="timeline-right">
-                  <div class="icon">
-                    <a href="#"><i class="spicon spicon-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="store">
-                  <a href="#">UNIQLO</a>
-                </div>
-                <div class="name">
-                  <a href="#">Midnight Sale</a>
-                </div>
-                <div class="description">Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <!-- Timeline -->
-          <div class="timeline">
-            <div class="timeline-header">
-              <a href="profile.html" class="timeline-photo">
-                <img src="images/photo.png" alt="photo" />
-              </a>
-              <div class="timeline-title">
-                <div class="timeline-right">
-                  <div class="icon">
-                    <a href="#"><i class="spicon spicon-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="store">
-                  <a href="#">H&amp;M</a>
-                </div>
-                <div class="name">
-                  <a href="#">Blog</a>
-                </div>
-                <div class="description">"Big wigs and stilt dresses would be fun" – blogger @redpoppyzuz tell #HMLife about the time period she would travel back through history to experience. Read the full story on hm.com/life. Photo by: @le21eme</div>
-              </div>
-            </div>
-            <div class="timeline-body">
-              <div class="image-full">
-                <img src="images/sample.jpg" alt="sample" />
-              </div>
-            </div>
+          <div class="list-blog-image">
+            <img src="/images/sample/sample-blog-image.jpg" alt="sample" />
           </div>
         </li>
       </ul>
+
       <!-- Load More -->
-      <div id="loadmore" class="load-more">
+      <div class="loadmore">
         <a href="#loadmore">LOADMORE</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal Box -->
-<div class="modal fade" id="full-modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <%= render "modal/search"%>
-    </div>
-  </div>
-</div>
-
-<script type="text/javascript">
-(function ($){
-  $('#toogle-sidebar').on('click', function (e) {
-    e.preventDefault();
-    var canvas = $('.canvas').toggleClass('on');
-    $('.container').on('click', function (e) {
-      if (canvas.hasClass('on'))
-      {
-        canvas.removeClass('on');
-      }
-    });
-  });
-  $('.timeline-right').each(function () {
-    var $this = $(this);
-    var image = $this.find('.product-image');
-    if (image.length)
-    {
-      $this.on('click', function (e) {
-        var off;
-        image.addClass('off');
-        if (image.hasClass('off'))
-        {
-          $this.find('.icon').addClass('in');
-          $this.on('mouseout', function () {
-            off = setTimeout(function () {
-              image.removeClass('off');
-              $this.find('.icon').removeClass('in');
-            }, 2500);
-          });
-          if (image.hasClass('off'))
-          {
-            $this.on('mouseover', function () {
-              clearInterval(off);
-            });
-          }
-        }
-      });
-    }
-  });
-})(jQuery);
-</script>
+<% content_for :javascript_content do %>
+  <%= javascript_include_tag 'libs/jquery/jquery.min' %>
+  <%= javascript_include_tag 'libs/bootstrap/transition' %>
+  <%= javascript_include_tag 'libs/bootstrap/modal' %>
+  <%= javascript_include_tag 'spotpunch' %>
+<% end %>
