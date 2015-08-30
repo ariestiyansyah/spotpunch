@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     collection { post :import }
   end
   
-  resources :malls, only:[] do
+  resources :malls, only:[:show] do
     get   ':name/:permalink'          => 'stores#show',                         on: :collection, as: :show
   end
 

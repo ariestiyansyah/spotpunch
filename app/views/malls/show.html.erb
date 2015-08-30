@@ -1,0 +1,341 @@
+<!-- Canvas -->
+<div class="canvas">
+  <!-- Sidebars -->
+  <%= render "layouts/sidebar"%>
+  <!-- Content -->
+  <div class="content">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <!-- Left Icon -->
+        <span id="toogle-sidebar" class="visible-phone pull-left">
+          <i class="spicon spicon-nav"></i>
+        </span>
+
+        <!-- Right Icon -->
+        <a href="modals/search.html" data-toggle="modal" data-target="#spotpunch-modal" class="pull-right">
+          <i class="spicon spicon-search"></i>
+        </a>
+
+        <!-- Header Title -->
+        <h1 class="navbar-title"><%= @mall.name %></h1>
+      </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+      <div class="shop">
+        <!-- Carousel -->
+        <div class="carousel" data-plugin="carousel">
+          <img src="/images/carousel/mall/carusel01.jpg" alt="carousel" />
+          <img src="/images/carousel/mall/carusel02.jpg" alt="carousel" />
+          <img src="/images/carousel/mall/carusel03.jpg" alt="carousel" />
+          <img src="/images/carousel/mall/carusel04.jpg" alt="carousel" />
+          <img src="/images/carousel/mall/carusel05.jpg" alt="carousel" />
+          <img src="/images/carousel/mall/carusel06.jpg" alt="carousel" />
+        </div>
+
+        <!-- Tabs -->
+        <div class="shop-tab">
+          <div class="menu-title">
+            <h3>SHOPS</h3>
+          </div>
+          <div class="menu-link">
+            <ul class="tab" role="tablist">
+              <li class="active" role="presentation">
+                <a href="#mall-index" aria-controls="mall-index" role="tab" data-toggle="tab" data-title="SHOPS"><i class="spicon spicon-mall"></i></a>
+              </li>
+              <li role="presentation">
+                <a href="#mall-news" aria-controls="mall-news" role="tab" data-toggle="tab" data-title="NEWS"><i class="spicon spicon-news"></i></a>
+              </li>
+              <li role="presentation">
+                <a href="#mall-detail" aria-controls="mall-detail" role="tab" data-toggle="tab" data-title="DETAILS"><i class="spicon spicon-info"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu-button">
+            <a class="button" href="#spot"><i class="spicon spicon-plus"></i> SPOT</a>
+          </div>
+        </div>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="mall-index">
+            <div class="floor-tab">
+              <ul class="tab" role="tablist">
+                <li class="active" role="presentation"><a href="#LG" aria-controls="LG" role="tab" data-toggle="tab">LG</a></li>
+                <li role="presentation"><a href="#LGM" aria-controls="LGM" role="tab" data-toggle="tab">LGM</a></li>
+                <li role="presentation"><a href="#GF" aria-controls="GF" role="tab" data-toggle="tab">GF</a></li>
+                <li role="presentation"><a href="#UG" aria-controls="UG" role="tab" data-toggle="tab">UG</a></li>
+                <li role="presentation"><a href="#FLOOR1" aria-controls="FLOOR1" role="tab" data-toggle="tab">1</a></li>
+                <li role="presentation"><a href="#FLOOR2" aria-controls="FLOOR2" role="tab" data-toggle="tab">2</a></li>
+                <li role="presentation"><a href="#FLOOR3" aria-controls="FLOOR3" role="tab" data-toggle="tab">3</a></li>
+                <li role="presentation"><a href="#FLOOR4" aria-controls="FLOOR4" role="tab" data-toggle="tab">4</a></li>
+                <li role="presentation"><a href="#FLOOR5" aria-controls="FLOOR5" role="tab" data-toggle="tab">5</a></li>
+              </ul>
+            </div>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="LG">
+                <ul class="listing">
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-food"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">McDonalds</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Food</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-bar"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">KFC</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Food</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-book"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">Gramedia</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Book Store</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-book"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">Books & Beyond</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Book Store</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-fashion"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">Uniqlo</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Fashion</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-book"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">Kinokuniya</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Book Store</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="list">
+                      <div class="list-image category-icon">
+                        <a href="shop.html">
+                          <i class="spicon spicon-coffe"></i>
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <h2 class="shop-title">
+                          <a href="shop.html">Starbucks</a>
+                        </h2>
+                        <div class="shop-category">
+                          <a href="#shop-category">Coffee Shop</a>
+                        </div>
+                      </div>
+                      <a href="shop.html" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="loadmore">
+                  <a href="#loadmore">LOADMORE</a>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="LGM">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="GF">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="UG">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="FLOOR1">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="FLOOR2">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="FLOOR3">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="FLOOR4">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="FLOOR5">
+                <ul class="listing">
+                  <li class="item align-center"><span>NO ITEMS HERE</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="mall-news">
+            <ul class="listing">
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="news-title">Build a Global Company</h2>
+                    <div class="news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#news-detail" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="news-title">Maintenance of Our Store</h2>
+                    <div class="news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#news-detail" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="news-title">Winter Collection 50% Discount</h2>
+                    <div class="news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#news-detail" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="news-title">Build a Global Company</h2>
+                    <div class="news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#news-detail" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+              <li class="item">
+                <div class="list">
+                  <div class="list-content">
+                    <h2 class="news-title">Maintenance of Our Store</h2>
+                    <div class="news-intro">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibha.</p>
+                    </div>
+                  </div>
+                  <a href="#news-detail" class="list-nav"><i class="spicon spicon-arrow-right"></i></a>
+                </div>
+              </li>
+            </ul>
+            <div class="loadmore">
+              <a href="#loadmore">LOADMORE</a>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="mall-detail">
+            <div class="shop-content">
+              <h3 class="title">Central Park</h3>
+              <p>Mall Detail Here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Box -->
+<div class="modal fade" id="spotpunch-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<% content_for :javascript_document do %>
+  <%= javascript_include_tag 'libs/jquery/jquery.min' %>
+  <%= javascript_include_tag 'libs/bootstrap/transition' %>
+  <%= javascript_include_tag 'libs/bootstrap/modal' %>
+  <%= javascript_include_tag 'libs/bootstrap/tab' %>
+  <%= javascript_include_tag 'libs/plugins/carousel' %>
+  <%= javascript_include_tag 'spotpunch' %>
+<% end %>

@@ -8,7 +8,9 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @user = current_user
+    @user         = User.find_by_username params[:permalink]
+    @reviewsSize  = @user.reviews.count
+    @reviews      = @user.reviews
   end
 
 end

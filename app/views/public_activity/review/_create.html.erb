@@ -8,15 +8,13 @@
     </div>
     <div class="list-content">
       <div class="text1">
-        <a href="product.html">Shop Name</a>
-        <%#= link_to shop.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
+        <%= link_to activity.trackable.store.name, show_malls_path(name:activity.trackable.store.mall.id, permalink:activity.trackable.store.id) %>
       </div>
       <div class="text2">
         <%= link_to activity.trackable.product.name, brand_product_path(activity.trackable.product.brand, activity.trackable.product) %>
       </div>
       <div class="text3">
-        <%#= link_to shop.mall.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
-        <a href="mall.html">Mall Name</a>
+        <%= link_to activity.trackable.store.mall.name, mall_path(activity.trackable.store.mall.permalink) %>
       </div>
     </div>
     <div class="list-nav list-flip">
@@ -38,7 +36,6 @@
   <div class="list-comment spicon spicon-quote">
     <h4>
       <%= link_to display_name(activity.owner), "#comment" %>
-      <!-- <a href="comment.html">Kim Tae Yeon</a> -->
     </h4>
     <p>
       <%= activity.trackable.content.html_safe %>

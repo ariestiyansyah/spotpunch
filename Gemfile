@@ -21,6 +21,7 @@ gem 'devise'
 gem 'mysql2'
 gem 'acts_as_follower'
 gem 'public_activity'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'sqlite3'

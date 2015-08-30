@@ -1,0 +1,35 @@
+<li class="item">
+  <div class="list">
+    <div class="list-image">
+      <a href="shop.html" class="list-logo">
+        <img src="images/logo/logo03.jpg" alt="logo" />
+      </a>
+    </div>
+    <div class="list-content">
+      <div class="text1">
+        <%= link_to review.store.name, show_malls_path(name:review.store.mall.id, permalink:review.store.id) %>
+      </div>
+      <div class="text2">
+        <%= link_to review.product.name, brand_product_path(review.product.brand, review.product) %>
+      </div>
+      <div class="text3">
+        <%= link_to review.store.mall.name, mall_path(review.store.mall.permalink) %>
+      </div>
+    </div>
+    <div class="list-nav list-flip">
+      <div class="flip-container">
+        <div class="flipper">
+          <div class="front">
+            <img src="images/product/product01.jpg" alt="product" />
+          </div>
+          <div class="back">
+            <div class="list-action">
+              <a href="#like"><i class="spicon spicon-like"></i></a>
+              <a href="#comment"><i class="spicon spicon-comment"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
