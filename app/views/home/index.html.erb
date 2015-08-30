@@ -1,17 +1,10 @@
 <div class="canvas">
-  <!-- Sidebar -->
   <%= render "layouts/sidebar"%>
-
-  <!-- Dashboard Content -->
   <div class="content">
-    <!-- Header -->
     <%= render partial: "container/header", locals: { title: "TIMELINE" }%>
-
-    <!-- Container -->
     <div class="container">
-      <!-- Listing -->
       <ul class="listing">
-        <%= render partial: "container/shop", locals: { shop: @apple }%>
+        <%= render_activities(@activities) %>
         <%= render partial: "container/official_shop", locals: { shop: @uniqlo }%>
         <li class="item">
           <div class="list">
@@ -42,8 +35,6 @@
           </div>
         </li>
       </ul>
-
-      <!-- Load More -->
       <div class="loadmore">
         <a href="#loadmore">LOADMORE</a>
       </div>

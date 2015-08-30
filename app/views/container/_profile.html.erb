@@ -1,0 +1,9 @@
+<div class="sidebar-profile">
+  <%= link_to profile_path(permalink:current_user.username) do %>
+      <img class="sidebar-profile-image" src="/images/photo/photo01.jpg" alt="profile" />
+  <% end %>
+  <div class="sidebar-profile-body">
+    <div class="sidebar-profile-name"><%= display_name current_user %></div>
+    <%= link_to "Edit Profile", edit_user_registration_path %>
+  </div>
+</div>

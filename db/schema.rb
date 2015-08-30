@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822180506) do
+ActiveRecord::Schema.define(version: 20150830103337) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id",   limit: 4
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150822180506) do
     t.integer  "category_id", limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "brand_id",    limit: 4
   end
 
   create_table "promotions", force: :cascade do |t|
@@ -97,6 +98,15 @@ ActiveRecord::Schema.define(version: 20150822180506) do
     t.integer  "store_id",    limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "content",    limit: 65535
+    t.integer  "score",      limit: 8,     default: 0
+    t.integer  "product_id", limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "roles", force: :cascade do |t|

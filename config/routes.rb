@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   resources :malls, only:[] do
     get   ':name/:permalink'          => 'stores#show',                         on: :collection, as: :show
   end
+
+  resources :brands, only:[] do
+    resources :products, only:[:show]
+  end
   
   get   '/:permalink'                 => 'home#profile',                        as: "profile",              :constraints => { :name => /[^\/]+/ }
 end

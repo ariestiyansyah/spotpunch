@@ -1,0 +1,258 @@
+<div class="canvas">
+  <!-- Sidebars -->
+  <%= render "products/sidebar"%>
+  <!-- Content -->
+  <div class="content">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <!-- Left Icon -->
+        <span id="toogle-sidebar" class="visible-phone pull-left">
+          <i class="spicon spicon-nav"></i>
+        </span>
+
+        <!-- Right Icon -->
+        <a href="modals/search.html" data-toggle="modal" data-target="#spotpunch-modal" class="pull-right">
+          <i class="spicon spicon-search"></i>
+        </a>
+
+        <!-- Header Title -->
+        <h1 class="navbar-title">PRODUCT DETAIL</h1>
+      </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+      <div class="shop">
+        <!-- Carousel -->
+        <div class="carousel" data-plugin="carousel">
+          <img src="/images/carousel/shop/carusel01.jpg" alt="carousel" />
+          <img src="/images/carousel/shop/carusel02.jpg" alt="carousel" />
+          <img src="/images/carousel/shop/carusel03.jpg" alt="carousel" />
+          <img src="/images/carousel/shop/carusel04.jpg" alt="carousel" />
+          <img src="/images/carousel/shop/carusel05.jpg" alt="carousel" />
+          <img src="/images/carousel/shop/carusel06.jpg" alt="carousel" />
+        </div>
+
+        <!-- Listing -->
+        <div class="listing">
+          <div class="item">
+            <div class="list">
+              <div class="list-image">
+                <span class="list-icon small">
+                  <i class="spicon spicon-fashion"></i>
+                </span>
+              </div>
+              <div class="list-content align-middle">
+                <div class="text">
+                  <span>Uniqlo</span>
+                </div>
+                <div class="text2">
+                  <span>Fashion</span>
+                </div>
+              </div>
+              <div class="list-button align-middle">
+                <a class="button" href="#spot"><i class="spicon spicon-plus"></i> SPOT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-tab">
+          <div class="menu-title">
+            <h3>SHOPS</h3>
+          </div>
+          <div class="menu-link">
+            <ul class="tab" role="tablist">
+              <li class="active" role="presentation">
+                <a href="#shop-index" aria-controls="shop-index" role="tab" data-toggle="tab" data-title="SHOPS"><i class="spicon spicon-fashion"></i></a>
+              </li>
+              <li role="presentation">
+                <a href="#shop-detail" aria-controls="shop-detail" role="tab" data-toggle="tab" data-title="DETAILS"><i class="spicon spicon-info"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="shop-index">
+            <div class="product">
+              <div class="image">
+                <img src="/images/sample/sample-product-image.jpg" alt="product" />
+              </div>
+              <div class="header">
+                <div class="title">
+                  <h3>Kaos Polo Dry Ex Lengan Pendek</h3>
+                  <div class="price">Rp 599.000</div>
+                  <div class="rate">
+                    <i class="spicon spicon-star active"></i>
+                    <i class="spicon spicon-star active"></i>
+                    <i class="spicon spicon-star active"></i>
+                    <i class="spicon spicon-star active"></i>
+                    <i class="spicon spicon-star"></i>
+                  </div>
+                </div>
+                <div class="score">
+                  <span class="score-badge">8.2</span>
+                </div>
+              </div>
+              <div class="header">
+                <div class="like">
+                  <i class="spicon spicon-like"></i> <span>5,214 Likes</span>
+                </div>
+                <div class="comment">
+                  <i class="spicon spicon-punch"></i> <span>48 Punches</span>
+                </div>
+              </div>
+              <div class="product-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.</p>
+              </div>
+              <div class="punch-button">
+                <a href="modals/punch.html" data-toggle="modal" data-target="#spotpunch-modal" class="button">PUNCH</a>
+                <a href="modals/what-is-punch.html" data-toggle="modal" data-target="#spotpunch-modal">What is Punch?</a>
+              </div>
+              <a class="product-body" role="button" data-toggle="collapse" href="#punches-toggle" aria-controls="punches-toggle">
+                <span class="list">
+                  <span class="list-content align-middle">
+                    <span>PUNCHES (48)</span>
+                  </span>
+                  <span class="list-nav"><i class="spicon spicon-arrow-right"></i></span>
+                </span>
+              </a>
+              <div class="collapse" id="punches-toggle">
+                <ul class="listing">
+                  <li class="item">
+                    <div class="time">
+                      <span>3w</span>
+                    </div>
+                    <div class="list">
+                      <div class="list-image">
+                        <a href="profile.html" class="list-photo">
+                          <img src="/images/photo/photo01.jpg" alt="photo" />
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <div class="text1">
+                          <a href="shop.html">Uniqlo</a>
+                        </div>
+                        <div class="text2">
+                          <a href="product.html">Kaos Polo Dry Ex Lengan Pendek</a>
+                        </div>
+                        <div class="text3">
+                          <a href="mall.html">Lotte Shopping Avenue</a>
+                        </div>
+                      </div>
+                      <div class="list-nav list-flip">
+                        <div class="list-action product-action">
+                          <a class="active" href="#like"><i class="spicon spicon-like"></i> <span class="count">243</span></a>
+                          <a href="#comment"><i class="spicon spicon-comment"></i> <span class="count">12</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-comment spicon spicon-quote">
+                      <h4><a href="comment.html">Kim Tae Yeon</a></h4>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="time">
+                      <span>1m 3d</span>
+                    </div>
+                    <div class="list">
+                      <div class="list-image">
+                        <a href="profile.html" class="list-photo">
+                          <img src="/images/photo/photo02.jpg" alt="photo" />
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <div class="text1">
+                          <a href="shop.html">Uniqlo</a>
+                        </div>
+                        <div class="text2">
+                          <a href="product.html">Kaos Polo Dry Ex Lengan Pendek</a>
+                        </div>
+                        <div class="text3">
+                          <a href="mall.html">Lotte Shopping Avenue</a>
+                        </div>
+                      </div>
+                      <div class="list-nav list-flip">
+                        <div class="list-action product-action">
+                          <a class="active" href="#like"><i class="spicon spicon-like"></i> <span class="count">243</span></a>
+                          <a href="#comment"><i class="spicon spicon-comment"></i> <span class="count">1.5K</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-comment spicon spicon-quote">
+                      <h4><a href="comment.html">Takeshi Kaneshiro</a></h4>
+                      <p>Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div class="time">
+                      <span>1m 3d</span>
+                    </div>
+                    <div class="list">
+                      <div class="list-image">
+                        <a href="profile.html" class="list-photo">
+                          <img src="/images/photo/photo03.jpg" alt="photo" />
+                        </a>
+                      </div>
+                      <div class="list-content">
+                        <div class="text1">
+                          <a href="shop.html">Uniqlo</a>
+                        </div>
+                        <div class="text2">
+                          <a href="product.html">Kaos Polo Dry Ex Lengan Pendek</a>
+                        </div>
+                        <div class="text3">
+                          <a href="mall.html">Lotte Shopping Avenue</a>
+                        </div>
+                      </div>
+                      <div class="list-nav list-flip">
+                        <div class="list-action product-action">
+                          <a class="active" href="#like"><i class="spicon spicon-like"></i> <span class="count">243</span></a>
+                          <a href="#comment"><i class="spicon spicon-comment"></i> <span class="count">2K</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-comment spicon spicon-quote">
+                      <h4><a href="comment.html">Yofie Setiawan</a></h4>
+                      <p>Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="loadmore">
+                  <a href="#loadmore">LOADMORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="shop-detail">
+            <div class="shop-content">
+              <h3 class="title">PRODUCT DETAIL</h3>
+              <p>Kaos Polo Dry Ex Lengan Pendek</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Box -->
+<div class="modal fade" id="spotpunch-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<% content_for :javascript_document do %>
+  <%= javascript_include_tag 'libs/jquery/jquery.min' %>
+  <%= javascript_include_tag 'libs/bootstrap/transition' %>
+  <%= javascript_include_tag 'libs/bootstrap/modal' %>
+  <%= javascript_include_tag 'libs/bootstrap/tab' %>
+  <%= javascript_include_tag 'libs/bootstrap/collapse' %>
+  <%= javascript_include_tag 'libs/plugins/carousel' %>
+  <%= javascript_include_tag 'spotpunch' %>
+<% end %>

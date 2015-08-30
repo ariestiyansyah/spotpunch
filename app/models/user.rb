@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   acts_as_followable
   acts_as_follower
 
-  has_one :permalink, as: :linkable
-  
+  has_one   :permalink, as: :linkable
+  has_many  :reviews
 end

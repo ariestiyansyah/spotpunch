@@ -1,21 +1,22 @@
 <li class="item">
   <div class="list">
     <div class="list-image">
-      <%= link_to profile_path(permalink:current_user.username), class: "list-photo" do %>
+      <%= link_to profile_path(permalink:activity.owner.username), class: "list-photo" do %>
           <img src="images/photo/photo02.jpg" alt="photo" />
           <span class="verify-icon"><i class="spicon spicon-check"></i></span>
       <% end %>
     </div>
     <div class="list-content">
       <div class="text1">
-        <%= link_to shop.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
+        <a href="product.html">Shop Name</a>
+        <%#= link_to shop.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
       </div>
       <div class="text2">
-        <a href="product.html">Cappuccino Coffee</a>
+        <%= link_to activity.trackable.product.name, brand_product_path(activity.trackable.product.brand, activity.trackable.product) %>
       </div>
       <div class="text3">
-        <%= link_to shop.mall.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
-        <!-- <a href="mall.html">Summarecon Mall Serpong</a> -->
+        <%#= link_to shop.mall.name, show_malls_path(name:shop.mall.id, permalink:shop.id) %>
+        <a href="mall.html">Mall Name</a>
       </div>
     </div>
     <div class="list-nav list-flip">
@@ -35,7 +36,12 @@
     </div>
   </div>
   <div class="list-comment spicon spicon-quote">
-    <h4><a href="comment.html">Kim Tae Yeon</a></h4>
-    <p>Enjoy my morning and lighten up my day with a cup of Cappuccino Coffee from Starbucks :)</p>
+    <h4>
+      <%= link_to display_name(activity.owner), "#comment" %>
+      <!-- <a href="comment.html">Kim Tae Yeon</a> -->
+    </h4>
+    <p>
+      <%= activity.trackable.content.html_safe %>
+    </p>
   </div>
 </li>
