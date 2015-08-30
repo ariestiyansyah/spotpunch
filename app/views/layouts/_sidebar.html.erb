@@ -10,9 +10,21 @@
         <% end %>
       </li>
       <li><a href="#"><i class="spicon spicon-activity"></i> Activity</a></li>
-      <li><a href="#"><i class="spicon spicon-punch"></i> Your Punches</a></li>
-      <li><a href="profile.html"><i class="spicon spicon-spoting"></i> Spotting</a></li>
-      <li><a href="profile.html"><i class="spicon spicon-spotter"></i> Spotters</a></li>
+      <li>
+        <%= link_to "#{profile_path(permalink:current_user.username)}#punch" do %>
+          <i class="spicon spicon-punch"></i> Your Punches
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#{profile_path(permalink:current_user.username)}#spotting" do %>
+          <i class="spicon spicon-spoting"></i> Spotting</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#{profile_path(permalink:current_user.username)}#spotters" do %>
+          <i class="spicon spicon-spotter"></i> Spotters
+        <% end %>
+      </li>
       <li><a href="#"><i class="spicon spicon-promotion"></i> Promotions</a></li>
       <li><a href="#"><i class="spicon spicon-wishlist"></i> Wishlist</a></li>
       <li class="divider"></li>

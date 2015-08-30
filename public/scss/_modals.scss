@@ -126,12 +126,38 @@
 .modal-theme-dark {
 	background: #353535;
 	border: 1px solid darken(#353535, 5%);
-	color: #FFF;
+	color: $color-white;
 	margin: -1px;
 	@include border-radius(3px);
 	.modal-title .close {
 		background: lighten($color-black, 5%);
 		color: darken($color-white, 50%);
+		@include border-radius(30px);
+		@include box-shadow(inset -2px 1px 1px rgba(0, 0, 0, 0.15));
+		@include transition(all .25s ease-in-out);
+		&:hover {
+			@include box-shadow(inset 2px -1px 1px rgba(0, 0, 0, 0.15));
+		}
+	}
+}
+.modal-theme-punch {
+	background: $color-spotpunch;
+	border: 1px solid darken($color-spotpunch, 5%);
+	color: $color-white;
+	margin: -1px;
+	@include border-radius(3px);
+	.close {
+		background: darken($color-white, 5%);
+		color: $color-spotpunch;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 20px;
+		text-align: center;
+		cursor: pointer;
 		@include border-radius(30px);
 		@include box-shadow(inset -2px 1px 1px rgba(0, 0, 0, 0.15));
 		@include transition(all .25s ease-in-out);

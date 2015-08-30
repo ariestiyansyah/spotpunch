@@ -95,6 +95,11 @@ $tab-link-color-active            : #555;
 $tab-link-padding                 : 10px 15px;
 $tab-link-line-height             : 18px;
 
+// Well variables
+// -----------------------------------------------------------------------------
+$well-background-color : #F5F5F5;
+$well-border-color     : darken($well-background-color, 7%);
+
 // Icon variables
 // -----------------------------------------------------------------------------
 $icon-font-name : 'SpotPunchIcon';

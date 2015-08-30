@@ -46,6 +46,7 @@ input[type="search"]:focus {
 	text-align: left;
 }
 textarea {
+	padding: 10px 15px;
 	height: auto;
 }
 select {
@@ -75,11 +76,10 @@ button,
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	&:hover,
+	&:active,
 	&:focus {
 		color: $button-color;
 		text-decoration: none;
-	}
-	&:active {
 	}
 	&:hover {
 		background: $button-background-color-hover;
@@ -161,6 +161,98 @@ button,
 			font-size: 20px;
 			display: inline-block;
 			*display: inline;
+		}
+	}
+}
+
+// Punch form modal box
+// -----------------------------------------------------------------------------
+.punch-form {
+	padding: 30px;
+	.form-rate {
+		margin: 20px 0;
+		width: 100%;
+		display: table;
+		.label {
+			display: table-cell;
+			font-size: 15px;
+			white-space: pre;
+			vertical-align: middle;
+		}
+		.input {
+			color: #C4C4C4;
+			width: 100%;
+			display: table-cell;
+			text-align: right;
+			vertical-align: middle;
+			label {
+				margin-left: 5px;
+				cursor: pointer;
+			}
+			.spicon {
+				font-size: 20px;
+				text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+				&.active,
+				&:hover {
+					color: #FFAC25;
+				}
+			}
+			input[type="checkbox"] {
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				z-index: -1;
+				&:checked ~ .spicon {
+					color: #FFAC25;
+				}
+			}
+		}
+	}
+	textarea {
+		color: #000;
+		resize: none;
+		max-height: 100px;
+		font-size: 13px;
+	}
+}
+.punch-form-button {
+	text-align: center;
+	.button {
+		background: #EBA100;
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, #FEAE00), color-stop(50%, #DC9600), color-stop(100%, #FEAE00));
+		background: -webkit-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+		background:    -moz-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+		background:     -ms-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+		background:      -o-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+		background:         linear-gradient(to bottom, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEAE00', endColorstr='#DC9600', GradientType=0);
+		background-size: 100% 80px;
+		color: $color-spotpunch;
+		padding: 5px 15px;
+		line-height: 38px;
+		font-size: 36px;
+		font-weight: $font-weight-extrabold;
+		text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+		@include box-shadow(none);
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-spotpunch;
+		}
+		&:hover {
+			background: #EBA100;
+			background: -webkit-gradient(left top, left bottom, color-stop(0%, #FEAE00), color-stop(50%, #DC9600), color-stop(100%, #FEAE00));
+			background: -webkit-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+			background:    -moz-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+			background:     -ms-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+			background:      -o-linear-gradient(top, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+			background:         linear-gradient(to bottom, #FEAE00 0%, #DC9600 50%, #FEAE00 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEAE00', endColorstr='#DC9600', GradientType=0);
+			background-size: 100% 80px;
+			background-position: 0 100%;
+			border: 1px solid transparent;
+			color: $color-spotpunch;
+			@include box-shadow(none);
 		}
 	}
 }

@@ -119,73 +119,36 @@
 	}
 }
 
-// Timeline
-// -----------------------------------------------------------------------------
-[class*="timeline-text"] {
-	line-height: 21px;
-	a {
-		color: inherit;
-		@include transition(color .25s ease);
-		&:hover {
-			color: $color-spotpunch;
-		}
-	}
-}
-.timeline-text {
-	font-size: 16px;
-	font-weight: $font-weight-extrabold;
-}
-.timeline-text1 {
-	font-size: 12px;
-	font-weight: $font-weight-extrabold;
-}
-.timeline-text2 {
-	font-size: 15px;
-}
-.timeline-text3 {
-	line-height: 22px;
-	font-size: 9px;
-}
-.timeline-text4 {
-	line-height: 22px;
-}
-
 // Profile
 // -----------------------------------------------------------------------------
 .profile {
 	margin: 0;
-}
-.profile-header {
-	border-bottom: $default-border;
-	padding: 15px;
-	width: 100%;
-	display: table;
-	> * {
-		display: table-cell;
-		vertical-align: top;
-		&.profile-image {
-			padding-right: 15px;
-			width: 128px;
+	.header {
+		border-bottom: $default-border;
+		padding: 15px;
+		width: 100%;
+		display: table;
+		> * {
+			display: table-cell;
+			vertical-align: top;
+			&.image {
+				padding-right: 15px;
+				width: 128px;
+			}
+			&.info {
+				vertical-align: middle;
+				> .name {
+					margin: 0 0 5px 0;
+					line-height: 21px;
+					font-size: 18px;
+					font-weight: $font-weight-extrabold;
+				}
+			}
 		}
-		&.profile-info {
-			vertical-align: middle;
+		&~ .tab {
+			margin-top: -1px;
 		}
 	}
-	&~ .tab {
-		margin-top: -1px;
-	}
-}
-.profile-info {
-	vertical-align: middle;
-	.name {
-		margin: 0 0 5px 0;
-		line-height: 21px;
-		font-size: 18px;
-		font-weight: $font-weight-extrabold;
-	}
-}
-.profile-body {
-	padding: 15px;
 }
 .profile-tab {
 	.tab > li {
@@ -212,7 +175,7 @@
 			font-size: 15px;
 			font-weight: $font-weight-extrabold;
 			&:focus,
-				&:hover {
+			&:hover {
 				background: transparent;
 				color: $color-spotpunch;
 			}
@@ -228,43 +191,108 @@
 	}
 }
 @media (max-width: 767px) {
-	.profile-header,
-	.profile-body {
+	.profile .header {
 		padding: 0;
 	}
 }
 
-// Shop
+// User Comment
+// -----------------------------------------------------------------------------
+.user-comment {
+	padding: 15px;
+}
+.comment-box {
+	background-color: #C8C8C8;
+	padding: 15px;
+	.box-group {
+		border-collapse: separate;
+		width: 100%;
+		display: table;
+		position: relative;
+		input[type="text"] {
+			border: 1px solid darken(#C8C8C8, 5%);
+			margin: 0;
+			display: table-cell;
+		}
+		.box-button {
+			padding-left: 15px;
+			width: 1%;
+			display: table-cell;
+			position: relative;
+			font-size: 0;
+			vertical-align: middle;
+			white-space: nowrap;
+			.button {
+				padding: 10px 20px;
+			}
+		}
+	}
+}
+
+// Shop & Mall
 // -----------------------------------------------------------------------------
 .shop {
 	.carousel {
 		margin: 0;
+	}
+	h2.news-title,
+	h2.shop-title {
+		margin: 0 0 10px 0;
+		font-size: 15px;
+		font-weight: $font-weight-extrabold;
+	}
+	h2.shop-title {
+		margin: 0 0 5px 0;
+		a,
+		a:hover,
+		a:focus {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+	.news-intro,
+	.shop-category {
+		line-height: 18px;
+		a,
+		a:hover,
+		a:focus {
+			color: inherit;
+			text-decoration: none;
+		}
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	.shop-category {
+		color: #626262;
 	}
 }
 .shop-tab {
 	border-bottom: $default-border;
 	width: 100%;
 	display: table;
-	.shop-menu-title,
-	.shop-menu-link {
+	.menu-title,
+	.menu-link,
+	.menu-button {
 		padding: 15px;
-		width: 60%;
+		width: 40%;
 		display: table-cell;
 		vertical-align: middle;
 	}
-	.shop-menu-title h3 {
+	.menu-title h3 {
 		color: $color-spotpunch;
 		margin: 0;
 		font-weight: $font-weight-extrabold;
 		white-space: pre;
 	}
-	.shop-menu-link {
-		width: 40%;
+	.menu-link {
+		width: 60%;
 		.tab {
 			border: 0 none;
 			float: right;
 			& > li {
 				margin: 0 0 0 15px;
+				height: 18px;
 				&:first-child {
 					margin: 0;
 				}
@@ -273,10 +301,12 @@
 					color: $color-black;
 					margin: 0;
 					padding: 0;
+					height: 18px;
+					display: inline-block;
 					&:hover,
-					&:focus {
+						&:focus {
 						background: none;
-						color: $color-black;
+						color: $color-spotpunch;
 					}
 					& + * {
 						margin-left: 15px;
@@ -292,31 +322,24 @@
 		}
 	}
 }
-.shop-content {
-	padding: 15px;
-	h3.title {
-		margin: 0 0 5px 0;
-		font-size: 15px;
-	}
-}
 ul.shop-product {
 	list-style: none outside;
+	margin: 0;
+	padding: 0;
 	> li {
 		@extend ul.shop-product;
 	}
 }
 .shop-product {
-	margin: 0 0 0 -1px;
-	padding: 0;
 	@extend .clearfix;
 	.item {
-		border: $default-border;
-		border-width: 0 0 1px 1px;
-		margin: 0;
 		width: 33.3333%;
 		float: left;
 		text-align: center;
 		a {
+			border: $default-border;
+			border-width: 0 1px 2px 0;
+			display: block;
 			text-decoration: none;
 			@include transition(opacity .25s ease);
 			&:hover {
@@ -325,15 +348,249 @@ ul.shop-product {
 		}
 	}
 }
-h2.shop-news-title {
-	margin: 0 0 10px 0;
-	font-size: 15px;
-	font-weight: $font-weight-extrabold;
+.shop-content {
+	padding: 25px 15px;
+	& + & {
+		border-top: $default-border;
+	}
+	h3.title {
+		margin: 0 0 5px 0;
+		font-size: 15px;
+	}
+	.claim-button {
+		border: 1px solid #535353;
+		color: $color-black;
+		margin: 20px 0 0 0;
+		padding: 0 20px;
+		line-height: 40px;
+		display: inline-block;
+		font-size: 12px;
+		text-transform: uppercase;
+		*display: inline;
+		@include transition(all .25s ease);
+		&:hover {
+			background: $color-spotpunch;
+			border: 1px solid darken($color-spotpunch, 5%);
+			color: $color-white;
+		}
+	}
 }
-.shop-news-intro {
-	line-height: 18px;
-	p:last-of-type {
-		margin-bottom: 0;
+.floor-tab {
+	background: #CBCBCB;
+	border-top: 1px solid darken(#CBCBCB, 5%);
+	border-bottom: 1px solid darken(#CBCBCB, 5%);
+	margin-top: -1px;
+	padding: 10px 15px;
+	.tab {
+		border: 0 none;
+		& > li {
+			margin: 0 15px 0 0;
+			&:last-child {
+				margin: 0;
+			}
+			a {
+				border: 0 none;
+				color: $color-white;
+				margin: 0;
+				padding: 5px;
+				display: inline-block;
+				font-size: 15px;
+				text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+				&:hover,
+				&:focus {
+					background: none;
+					border: 0 none;
+					color: $color-black;
+					text-shadow: none;
+				}
+				& + * {
+					margin-left: 15px;
+				}
+			}
+			&.active > a {
+				background: transparent;
+				color: $color-black;
+				text-shadow: none;
+			}
+		}
+	}
+}
+.category-icon {
+	padding-right: 15px;
+	.spicon {
+		color: #CBCBCB;
+		font-size: 35px;
+	}
+}
+@media (max-width: 767px) {
+	.floor-tab .tab  > li {
+		margin-right: 10px;
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 }
 
+// Product
+// -----------------------------------------------------------------------------
+.product {
+	.image {
+		border-bottom: $default-border;
+		img {
+			width: 100%;
+		}
+	}
+	.header {
+		width: 100%;
+		display: table;
+		&~.header {
+			margin-top: -15px;
+		}
+		.title,
+		.score,
+		.like,
+		.comment {
+			padding: 15px;
+			display: table-cell;
+			vertical-align: top;
+		}
+		.title {
+			font-size: 15px;
+			h3 {
+				margin: 0 0 10px 0;
+				font-size: 15px;
+			}
+		}
+		.score {
+			width: 1%;
+			.score-badge {
+				background: #007042;
+				color: $color-white;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				display: block;
+				font-size: 18px;
+				font-weight: $font-weight-extrabold;
+				text-align: center;
+				@include border-radius(50px);
+			}
+		}
+		.like,
+		.comment {
+			vertical-align: middle;
+			.spicon {
+				color: $color-spotpunch;
+				margin-right: 10px;
+				float: left;
+				font-size: 20px;
+			}
+		}
+		.comment {
+			vertical-align: middle;
+			.spicon {
+				color: $color-black;
+				@include transform(rotate(-90deg));
+			}
+		}
+	}
+	.price {
+		margin: 10px 0;
+		.spicon-star {
+			font-size: 20px;
+		}
+	}
+	.rate {
+		.spicon {
+			color: #939393;
+			font-size: 20px;
+			&.active {
+				color: #FFAC25;
+			}
+		}
+	}
+	.time {
+		margin-bottom: 5px;
+		text-align: right;
+	}
+}
+.product-body {
+	border-top: $default-border;
+	padding: 15px;
+	display: block;
+	&~.punch-button {
+		margin: -20px 0 10px 0;
+	}
+}
+a.product-body {
+	color: inherit;
+	text-decoration: none;
+	&:hover,
+	&:active,
+	&:focus {
+		@extend a.product-body;
+	}
+	&[aria-expanded="true"] .list-nav > .spicon {
+		@include transform(rotate(90deg));
+	}
+	.list-nav > .spicon {
+		@include transition(all .25s ease);
+	}
+}
+.product-action {
+	padding: 1px 0;
+	width: 100%;
+	display: table;
+	text-align: left;
+	> a {
+		display: table-row;
+		&+ a {
+			margin: 0;
+		}
+		&>* {
+			padding: 4px 0 4px 5px;
+			width: 1%;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	.count {
+		color: $color-black;
+		height: 22px;
+		line-height: 22px;
+		font-size: 9px;
+	}
+}
+.punch-button {
+	color: #AAA;
+	padding: 15px;
+	overflow: hidden;
+	a,
+	a:hover,
+	a:focus {
+		color: inherit;
+	}
+	.button {
+		background: $color-spotpunch;
+		color: $color-white;
+		margin-right: 10px;
+		@include box-shadow(inset 0 -1px 0 lighten($color-spotpunch, 5%));
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-white;
+		}
+		&:hover {
+			background: darken($color-spotpunch, 5%);
+			border: 1px solid transparent;
+			color: $color-white;
+			@include box-shadow(inset 0 -1px 0 lighten(darken($color-spotpunch, 5%), 5%));
+		}
+	}
+}
+@media (min-width: 768px) {
+	.product .header .like,
+	.product .header .comment {
+		display: inline-block;
+	}
+}

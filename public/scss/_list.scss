@@ -7,9 +7,7 @@ ul.listing {
 	margin: 0;
 	padding: 0;
 	> li {
-		list-style: none outside;
-		margin: 0;
-		padding: 0;
+		@extend ul.listing;
 	}
 }
 .listing {
@@ -30,6 +28,37 @@ ul.listing {
 	width: 100%;
 	display: table;
 }
+.listing,
+.list {
+	[class*="text"] {
+		line-height: 21px;
+		a {
+			color: inherit;
+			@include transition(color .25s ease);
+			&:hover {
+				color: $color-spotpunch;
+			}
+		}
+	}
+	.text {
+		font-size: 16px;
+		font-weight: $font-weight-extrabold;
+	}
+	.text1 {
+		font-size: 12px;
+		font-weight: $font-weight-extrabold;
+	}
+	.text2 {
+		font-size: 15px;
+	}
+	.text3 {
+		line-height: 22px;
+		font-size: 9px;
+	}
+	.text4 {
+		line-height: 22px;
+	}
+}
 .list-content,
 .list-image,
 .list-button {
@@ -37,6 +66,9 @@ ul.listing {
 	vertical-align: top;
 	&.align-middle {
 		vertical-align: middle;
+	}
+	p:last-of-type {
+		margin-bottom: 0;
 	}
 }
 .list-image,
@@ -58,6 +90,9 @@ ul.listing {
 	&.small {
 		width: 48px;
 	}
+	&.large {
+		width: 128px;
+	}
 }
 .list-icon {
 	&.spicon {
@@ -72,7 +107,7 @@ ul.listing {
 }
 .list-header {
 	@extend .list;
-	.list-header-text {
+	.header-text {
 		white-space: unset;
 	}
 	~ .list-body {
@@ -90,6 +125,9 @@ ul.listing {
 		padding-left: 15px;
 		width: 64px;
 		vertical-align: top;
+		&.align-middle {
+			vertical-align: middle;
+		}
 		.flip-container {
 			width: 64px;
 			height: 64px;
@@ -136,6 +174,7 @@ ul.listing {
 	}
 	.spicon {
 		font-size: 22px;
+		cursor: pointer;
 	}
 }
 .list-body p:last-of-type {
@@ -159,6 +198,7 @@ ul.listing {
 		line-height: 22px;
 		display: block;
 		font-size: 22px;
+		white-space: nowrap;
 		@include transition(color .25s ease);
 		&+ a {
 			margin-top: 10px;
@@ -194,4 +234,10 @@ ul.listing {
 	p:last-of-type {
 		margin-bottom: 0;
 	}
+}
+.list-comment-time {
+	@extend .list-content;
+	position: relative;
+	text-align: right;
+	white-space: pre;
 }

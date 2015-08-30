@@ -33,15 +33,12 @@
 		padding-bottom: $navbar-spacing-side + 1;
 		font-size: $navbar-icon-size;
 		position: relative;
-		cursor: default;
+		cursor: pointer;
 		z-index: 15;
 	}
 	a {
 		text-decoration: none;
 		outline: none;
-		.spicon {
-			cursor: pointer;
-		}
 	}
 	.navbar-title {
 		color: $navbar-title-color;
@@ -62,6 +59,10 @@
 		   -moz-user-select: none;
 		> span {
 			display: block;
+			&.long-title {
+				margin: 0 75px;
+				overflow: hidden;
+			}
 		}
 	}
 	&~.container {
