@@ -1,0 +1,33 @@
+<li class="item">
+  <div class="time">
+    <span>3w</span>
+  </div>
+  <div class="list">
+    <div class="list-image">
+      <a href="profile.html" class="list-photo">
+        <img src="/images/photo/photo01.jpg" alt="photo" />
+      </a>
+    </div>
+    <div class="list-content">
+      <div class="text1">
+        <%= link_to review.store.name, show_malls_path(name:review.store.mall.id, permalink:review.store.id) %>
+      </div>
+      <div class="text2">
+        <%= link_to review.product.name, brand_product_path(review.product.brand, review.product) %>
+      </div>
+      <div class="text3">
+        <%= link_to review.store.mall.name, mall_path(review.store.mall.permalink) %>
+      </div>
+    </div>
+    <div class="list-nav list-flip">
+      <div class="list-action product-action">
+        <a class="active" href="#like"><i class="spicon spicon-like"></i> <span class="count">243</span></a>
+        <a href="#comment"><i class="spicon spicon-comment"></i> <span class="count">12</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="list-comment spicon spicon-quote">
+    <h4><a href="comment.html"><%= display_name current_user %></a></h4>
+    <p><%= review.content.html_safe %></p>
+  </div>
+</li>

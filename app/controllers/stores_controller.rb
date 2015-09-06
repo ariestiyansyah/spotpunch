@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   def show
-    @store = Store.find_by_id params[:permalink]
+    @mall   = Mall.find_by_permalink params[:name]
+    @store  = @mall.stores.find_by permalink: params[:permalink]
   end
 end
