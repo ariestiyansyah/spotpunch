@@ -10,7 +10,7 @@
         <%= link_to review.store.name, show_malls_path(name:review.store.mall.id, permalink:review.store.id) %>
       </div>
       <div class="text2">
-        <%= link_to review.product.name, brand_product_path(review.product.brand, review.product) %>
+        <%= link_to review.product.name, products_show_malls_path(name:review.store.mall.id, permalink:review.store.id, product_id:review.product) %>
       </div>
       <div class="text3">
         <%= link_to review.store.mall.name, mall_path(review.store.mall.permalink) %>

@@ -11,7 +11,7 @@
         <%= link_to activity.trackable.store.name, show_malls_path(name:activity.trackable.store.mall.permalink, permalink:activity.trackable.store.permalink) %>
       </div>
       <div class="text2">
-        <%= link_to activity.trackable.product.name, brand_product_path(activity.trackable.product.brand, activity.trackable.product) %>
+        <%= link_to activity.trackable.product.name, products_show_malls_path(name:activity.trackable.store.mall.permalink, permalink:activity.trackable.store.permalink, product_id:activity.trackable.product) %>
       </div>
       <div class="text3">
         <%= link_to activity.trackable.store.mall.name, mall_path(activity.trackable.store.mall.permalink) %>

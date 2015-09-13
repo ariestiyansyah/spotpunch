@@ -1,22 +1,6 @@
 <div class="modal-body modal-theme-punch">
   <span class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true">&times;</span>
-  <form class="punch-form" action="#punch" method="post">
-    <p class="align-center">Punch means you just bought or like this product, so you would like to help to share and recommend it to your friends. Please also rate and tell us why you like this product. Punch!</p>
-    <div class="form-rate">
-      <div class="label">RATE</div>
-      <div class="input" data-action="punch-rate">
-        <label class="punch-rate"><input type="checkbox" name="rate[]" value="1" /><i class="spicon spicon-star"></i></label>
-        <label class="punch-rate"><input type="checkbox" name="rate[]" value="2" /><i class="spicon spicon-star"></i></label>
-        <label class="punch-rate"><input type="checkbox" name="rate[]" value="3" /><i class="spicon spicon-star"></i></label>
-        <label class="punch-rate"><input type="checkbox" name="rate[]" value="4" /><i class="spicon spicon-star"></i></label>
-        <label class="punch-rate"><input type="checkbox" name="rate[]" value="5" /><i class="spicon spicon-star"></i></label>
-      </div>
-    </div>
-    <textarea cols="30" rows="4" maxlength="200" placeholder="Write something about this product... (max 200 characters)"></textarea>
-    <div class="punch-form-button">
-      <input type="submit" class="button" value="PUNCH" />
-    </div>
-  </form>
+  <%= render "form/review" %>
 </div>
 <script type="text/javascript">
 jQuery(document).ready(function($){

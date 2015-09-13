@@ -70,15 +70,16 @@
                   <h3><%= @product.name %></h3>
                   <div class="price">Rp 599.000</div>
                   <div class="rate">
-                    <i class="spicon spicon-star active"></i>
-                    <i class="spicon spicon-star active"></i>
-                    <i class="spicon spicon-star active"></i>
-                    <i class="spicon spicon-star active"></i>
-                    <i class="spicon spicon-star"></i>
+                    <% @average_score.to_i.times do |i| %>
+                      <i class="spicon spicon-star active"></i>
+                    <% end %>
+                    <% @total_score.times do |i| %>
+                      <i class="spicon spicon-star"></i>
+                    <% end %>
                   </div>
                 </div>
                 <div class="score">
-                  <span class="score-badge">8.2</span>
+                  <span class="score-badge"><%= @average_score.to_f %></span>
                 </div>
               </div>
               <div class="header">
@@ -86,7 +87,7 @@
                   <i class="spicon spicon-like"></i> <span>5,214 Likes</span>
                 </div>
                 <div class="comment">
-                  <i class="spicon spicon-punch"></i> <span>48 Punches</span>
+                  <i class="spicon spicon-punch"></i> <span><%= @reviews.size %> Punches</span>
                 </div>
               </div>
               <div class="product-body">

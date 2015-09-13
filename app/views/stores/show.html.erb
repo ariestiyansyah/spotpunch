@@ -70,15 +70,13 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="shop-index">
             <ul class="shop-product">
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-01.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-02.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-03.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-04.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-05.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-06.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-07.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-08.jpg" alt="shop product" /></a></li>
-              <li class="item"><a href="#"><img src="/images/shop/shop-product-09.jpg" alt="shop product" /></a></li>
+              <% @products.each do |product| %>
+                <li class="item">
+                  <%= link_to products_show_malls_path(name:@mall, permalink:@store.permalink, product_id:product) do %>
+                    <img src="/images/shop/shop-product-01.jpg" alt="shop product" />
+                  <% end %>
+                </li>
+              <% end %>
             </ul>
             <div class="loadmore">
               <a href="#loadmore">LOADMORE</a>

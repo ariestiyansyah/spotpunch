@@ -1,7 +1,9 @@
 class Store < ActiveRecord::Base
-  belongs_to :brand
-  belongs_to :mall
-  has_many   :reviews
+  belongs_to  :brand
+  belongs_to  :mall
+  has_many    :reviews
+  has_many    :store_product
+  has_many    :products, through: :store_product
 
   def to_slug counter=0
     self.permalink = self.permalink.strip

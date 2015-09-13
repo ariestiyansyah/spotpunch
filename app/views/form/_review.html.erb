@@ -1,0 +1,27 @@
+<%= form_for @review, url: reviews_create_malls_path(name:@mall, permalink:@store.permalink, product_id:@product), html: { class: "punch-form" } do |f| %>
+  <p class="align-center">Punch means you just bought or like this product, so you would like to help to share and recommend it to your friends. Please also rate and tell us why you like this product. Punch!</p>
+  <div class="form-rate">
+    <div class="label">RATE</div>
+    <div class="input" data-action="punch-rate">
+      <label class="punch-rate">
+        <input type="checkbox" name="score[]" value="1" />
+        <i class="spicon spicon-star"></i></label>
+      <label class="punch-rate">
+        <input type="checkbox" name="score[]" value="2" />
+        <i class="spicon spicon-star"></i></label>
+      <label class="punch-rate">
+        <input type="checkbox" name="score[]" value="3" />
+        <i class="spicon spicon-star"></i></label>
+      <label class="punch-rate">
+        <input type="checkbox" name="score[]" value="4" />
+        <i class="spicon spicon-star"></i></label>
+      <label class="punch-rate">
+        <input type="checkbox" name="score[]" value="5" />
+        <i class="spicon spicon-star"></i></label>
+    </div>
+  </div>
+  <%= f.text_area :content, placeholder: "Write something about this product... (max 200 characters)", cols:"30", rows:"4", maxlength:"200" %>
+  <div class="punch-form-button">
+    <input type="submit" class="button" value="PUNCH" />
+  </div>
+<% end %>
