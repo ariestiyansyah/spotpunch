@@ -1,0 +1,29 @@
+<li class="item" id="<%= following.class.name.downcase %>-<%= following.id %>">
+  <div class="list">
+    <div class="list-image">
+      <a href="profile.html" class="list-photo small">
+        <img src="images/photo/photo02.jpg" alt="logo" />
+      </a>
+    </div>
+    <div class="list-content align-middle">
+      <div class="text1">
+        <a href="profile.html"><%= following.name %></a>
+      </div>
+      <div class="text4">
+        <a href="profile.html">@takeshikaneshiro</a>
+      </div>
+    </div>
+    <div class="list-button align-middle">
+      <% case following.class.name %>
+      <% when "Brand" %>
+        <%= link_to unfollow_brands_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button", id:"option-search" do %>
+          <i class="spicon spicon-plus"></i> UNSPOT
+        <% end %>
+      <% when "Store" %>
+        <%= link_to unfollow_stores_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+          <i class="spicon spicon-plus"></i> UNSPOT
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</li>

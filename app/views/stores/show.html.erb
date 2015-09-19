@@ -39,8 +39,12 @@
                   </div>
                 </div>
               </div>
-              <div class="list-button align-middle">
-                <a class="button" href="#"><i class="spicon spicon-plus"></i> SPOT</a>
+              <div class="list-button align-middle" id="spot-button">
+                <% if @is_user_following %>
+                  <%= render "stores/component/unfollow"%>
+                <% else %>
+                  <%= render "stores/component/follow"%>
+                <% end %>
               </div>
             </div>
           </div>

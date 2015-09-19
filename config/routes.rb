@@ -20,6 +20,16 @@ Rails.application.routes.draw do
     post  ':name/:permalink/:product_id/reviews'  => 'reviews#create',    on: :collection, as: :reviews_create
   end
 
+  resources :brands, only:[] do
+    post  ':brand_id/follow'      => 'brands#follow',    on: :collection, as: :follow
+    post  ':brand_id/unfollow'    => 'brands#unfollow',  on: :collection, as: :unfollow
+  end
+
+  resources :stores, only:[] do
+    post  ':store_id/follow'      => 'stores#follow',    on: :collection, as: :follow
+    post  ':store_id/unfollow'    => 'stores#unfollow',  on: :collection, as: :unfollow
+  end
+
   # resources :brands, only:[] do
   #   resources :products, only:[:show] do
   #     resources :reviews
