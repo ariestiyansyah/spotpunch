@@ -1,0 +1,1 @@
+$("#like-product-<%= params[:id] %>").replaceWith( "<%= escape_javascript(render partial: 'products/component/like', locals: { product:@product, id:params[:id] } ) %>" );

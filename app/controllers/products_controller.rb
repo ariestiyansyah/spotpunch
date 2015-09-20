@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
+  
   def show
     @product            = Product.find_by_id params[:product_id]
     @mall               = Mall.find_by_permalink params[:name]
@@ -10,4 +12,15 @@ class ProductsController < ApplicationController
     @brand              = @product.brand
     @is_user_following  = current_user.following?(@brand)
   end
+
+  def like
+    @product            = Product.find_by_id params[:product_id] 
+    @product.liked_by current_user
+  end
+
+  def dislike
+    @product            = Product.find_by_id params[:product_id] 
+    @product.unliked_by current_user
+  end
+
 end
