@@ -1,0 +1,4 @@
+$("#user-follower-<%= @user.id %>").replaceWith( "<%= escape_javascript(render partial: 'users/component/user_unfollower', locals:{follower:@user,is_current_user_page:params[:is_current_user_page]}) %>" );
+<% if !params[:is_current_user_page].blank? %>
+  $("#following-count").html("<%= @following_size %>")
+<% end %>

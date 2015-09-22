@@ -1,0 +1,3 @@
+<%= link_to follow_users_path(follower), method: :post, remote:true, data:{params:"profile=true&follower_id=#{follower.id}&is_current_user_page=#{is_current_user_page}"}, class: "button", id:"user-follower-#{follower.id}" do %>
+  <i class="spicon spicon-plus"></i> SPOT
+<% end %>

@@ -30,6 +30,11 @@ Rails.application.routes.draw do
     post  ':store_id/unfollow'    => 'stores#unfollow',  on: :collection, as: :unfollow
   end
 
+  resources :users, only:[] do
+    post  ':user_id/follow'       => 'users#follow',    on: :collection, as: :follow
+    post  ':user_id/unfollow'     => 'users#unfollow',  on: :collection, as: :unfollow
+  end
+
   resources :products, only:[] do
     post  ':product_id/like'      => 'products#like',     on: :collection, as: :like
     post  ':product_id/dislike'   => 'products#dislike',  on: :collection, as: :dislike

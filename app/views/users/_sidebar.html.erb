@@ -14,7 +14,11 @@
       <li><a href="#"><i class="spicon spicon-wishlist"></i> Wishlist</a></li>
       <li class="divider"></li>
       <li><a href="#"><i class="spicon spicon-setting"></i> Settings</a></li>
-      <li><a href="index.html"><i class="spicon spicon-logout"></i> Logout</a></li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="spicon spicon-logout"></i> Logout
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>

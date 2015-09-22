@@ -9,11 +9,14 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @user           = User.find_by_username params[:permalink]
-    @reviewsSize    = @user.reviews.count
-    @reviews        = @user.reviews
-    @following_size = @user.follow_count
-    @followings     = @user.all_following
+    @user               = User.find_by_username params[:permalink]
+    @reviewsSize        = @user.reviews.count
+    @reviews            = @user.reviews
+    @following_size     = @user.follow_count
+    @followings         = @user.all_following
+    @follower_size      = @user.followers_count
+    @followers          = @user.followers
+    @is_user_following  = current_user.following?(@user)
   end
 
 end

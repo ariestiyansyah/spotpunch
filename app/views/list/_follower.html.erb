@@ -1,0 +1,56 @@
+<li class="item" id="<%= follower.class.name.downcase %>-<%= follower.id %>">
+  <div class="list">
+    <div class="list-image">
+      <a href="profile.html" class="list-photo small">
+        <img src="images/photo/photo02.jpg" alt="logo" />
+      </a>
+    </div>
+    <div class="list-content align-middle">
+      <div class="text1">
+        <% case follower.class.name %>
+        <% when "Brand" %>
+          <a href="profile.html"><%= follower.name %></a>
+        <% when "Store" %>
+          <a href="profile.html"><%= follower.name %></a>
+        <% when "User" %>
+          <a href="profile.html"><%= follower.username %></a>
+        <% end %>
+      </div>
+      <div class="text4">
+        <a href="profile.html">@takeshikaneshiro</a>
+      </div>
+    </div>
+    <% unless current_user == follower %>
+      <div class="list-button align-middle">
+        <% case follower.class.name %>
+        <% when "Brand" %>
+          <% if current_user.following?(follower) %>
+            <%= link_to follow_brands_path(follower), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+              <i class="spicon spicon-plus"></i> SPOTTING
+            <% end %>
+          <% else %>
+            <%= link_to follow_brands_path(follower), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+              <i class="spicon spicon-plus"></i> SPOT
+            <% end %>
+          <% end %>
+        <% when "Store" %>
+          <% if current_user.following?(follower) %>
+            <%= link_to follow_stores_path(follower), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+              <i class="spicon spicon-plus"></i> SPOTTING
+            <% end %>
+          <% else %>
+            <%= link_to follow_stores_path(follower), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+              <i class="spicon spicon-plus"></i> SPOT
+            <% end %>
+          <% end %>
+        <% when "User" %>
+          <% if current_user.following?(follower) %>
+            <%= render partial: "users/component/user_unfollower", locals:{follower:follower, is_current_user_page:(true if @user==current_user)} %>
+          <% else %>
+            <%= render partial: "users/component/user_follower", locals:{follower:follower, is_current_user_page:(true if @user==current_user)} %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</li>
