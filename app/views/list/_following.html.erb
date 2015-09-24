@@ -1,38 +1,45 @@
 <li class="item" id="<%= following.class.name.downcase %>-<%= following.id %>">
   <div class="list">
     <div class="list-image">
-      <a href="profile.html" class="list-photo small">
-        <img src="images/photo/photo02.jpg" alt="logo" />
-      </a>
+      <%= display_list_image_profile following %>
     </div>
     <div class="list-content align-middle">
       <div class="text1">
-        <% case following.class.name %>
-        <% when "Brand" %>
-          <a href="profile.html"><%= following.name %></a>
-        <% when "Store" %>
-          <a href="profile.html"><%= following.name %></a>
-        <% when "User" %>
-          <a href="profile.html"><%= following.username %></a>
-        <% end %>
+        <%= display_list_name_profile following %>
       </div>
       <div class="text4">
-        <a href="profile.html">@takeshikaneshiro</a>
+        <%= display_list_username_profile following %>
       </div>
     </div>
     <div class="list-button align-middle">
       <% case following.class.name %>
       <% when "Brand" %>
-        <%= link_to unfollow_brands_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-          <i class="spicon spicon-plus"></i> SPOTTING
+        <% if current_user.following?(following) %>
+          <%= link_to unfollow_brands_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+            <i class="spicon spicon-plus"></i> SPOTTING
+          <% end %>
+        <% else %>
+          <%= link_to follow_brands_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+            <i class="spicon spicon-plus"></i> SPOT
+          <% end %>
         <% end %>
       <% when "Store" %>
-        <%= link_to unfollow_stores_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-          <i class="spicon spicon-plus"></i> SPOTTING
+        <% if current_user.following?(following) %>
+          <%= link_to unfollow_stores_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+            <i class="spicon spicon-plus"></i> SPOTTING
+          <% end %>
+        <% else %>
+          <%= link_to follow_stores_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
+            <i class="spicon spicon-plus"></i> SPOT
+          <% end %>
         <% end %>
       <% when "User" %>
-        <%= link_to unfollow_users_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-          <i class="spicon spicon-plus"></i> SPOTTING
+        <% unless following == current_user %>
+          <% if current_user.following?(following) %>
+            <%= render partial: "users/component/user_unfollowing", locals:{following:following, is_current_user_page:(true if @user==current_user)} %>
+          <% else %>
+            <%= render partial: "users/component/user_following", locals:{following:following, is_current_user_page:(true if @user==current_user)} %>
+          <% end %>
         <% end %>
       <% end %>
     </div>

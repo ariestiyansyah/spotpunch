@@ -7,7 +7,11 @@ class UsersController < ApplicationController
     if params[:profile]
       @following_size = current_user.follow_count
       respond_to do |format|
-        format.js { render "user_follower" }
+        unless params[:following_id]
+          format.js { render "user_follower" }
+        else        
+          format.js { render "user_following" }
+        end
         format.html
       end
     else
@@ -21,7 +25,11 @@ class UsersController < ApplicationController
     if params[:profile]
       @following_size = current_user.follow_count
       respond_to do |format|
-        format.js { render "user_unfollower" }
+        unless params[:following_id]
+          format.js { render "user_unfollower" }
+        else        
+          format.js { render "user_unfollowing" }
+        end
         format.html
       end
     else

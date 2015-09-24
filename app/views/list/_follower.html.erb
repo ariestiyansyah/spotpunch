@@ -1,23 +1,14 @@
 <li class="item" id="<%= follower.class.name.downcase %>-<%= follower.id %>">
   <div class="list">
     <div class="list-image">
-      <a href="profile.html" class="list-photo small">
-        <img src="images/photo/photo02.jpg" alt="logo" />
-      </a>
+      <%= display_list_image_profile follower %>
     </div>
     <div class="list-content align-middle">
       <div class="text1">
-        <% case follower.class.name %>
-        <% when "Brand" %>
-          <a href="profile.html"><%= follower.name %></a>
-        <% when "Store" %>
-          <a href="profile.html"><%= follower.name %></a>
-        <% when "User" %>
-          <a href="profile.html"><%= follower.username %></a>
-        <% end %>
+        <%= display_list_name_profile follower %>
       </div>
       <div class="text4">
-        <a href="profile.html">@takeshikaneshiro</a>
+        <%= display_list_username_profile follower %>
       </div>
     </div>
     <% unless current_user == follower %>
@@ -44,10 +35,12 @@
             <% end %>
           <% end %>
         <% when "User" %>
-          <% if current_user.following?(follower) %>
-            <%= render partial: "users/component/user_unfollower", locals:{follower:follower, is_current_user_page:(true if @user==current_user)} %>
-          <% else %>
-            <%= render partial: "users/component/user_follower", locals:{follower:follower, is_current_user_page:(true if @user==current_user)} %>
+          <% unless follower == current_user %>
+            <% if current_user.following?(follower) %>
+              <%= render partial: "users/component/user_unfollower", locals:{follower:follower, is_current_user_page:(true if @user==current_user)} %>
+            <% else %>
+              <%= render partial: "users/component/user_follower", locals:{follower:follower, is_current_user_page:(true if @user==current_user)} %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
