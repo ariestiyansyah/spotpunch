@@ -1,2 +1,5 @@
-$("#store-<%= @store.id %>").remove();
-$("#following-count").html("<%= @following_size %>")
+$("#store-following-<%= @store.id %>").replaceWith( "<%= escape_javascript(render partial: 'stores/component/user_following', locals:{following:@store,is_current_user_page:params[:is_current_user_page]}) %>" );
+<% if !params[:is_current_user_page].blank? %>
+  $("#store-<%= @store.id %>").remove();
+  $("#following-count").html("<%= @following_size %>")
+<% end %>

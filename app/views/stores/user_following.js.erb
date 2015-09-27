@@ -1,0 +1,1 @@
+$("#store-following-<%= @store.id %>").replaceWith( "<%= escape_javascript(render partial: 'stores/component/user_unfollowing', locals:{following:@store,is_current_user_page:params[:is_current_user_page]}) %>" );

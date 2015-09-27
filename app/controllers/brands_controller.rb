@@ -4,6 +4,17 @@ class BrandsController < ApplicationController
   def follow
     @brand = Brand.find_by_id params[:brand_id]  
     current_user.follow(@brand)
+    if params[:profile]
+      respond_to do |format|
+        unless params[:following_id]
+          format.js { render "user_follower" }
+        else        
+          format.js { render "user_following" }
+        end
+        format.html
+      end
+    else
+    end
   end
 
   def unfollow

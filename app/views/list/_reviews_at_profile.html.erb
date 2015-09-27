@@ -24,7 +24,11 @@
           </div>
           <div class="back">
             <div class="list-action">
-              <a href="#like"><i class="spicon spicon-like"></i></a>
+              <% if @current_user.liked? review.product %>
+                <%= render partial: "products/component/like", locals: { product:review.product, id:review.product.id }%>
+              <% else %>
+                <%= render partial: "products/component/dislike", locals: { product:review.product, id:review.product.id }%>
+              <% end %>
               <a href="#comment"><i class="spicon spicon-comment"></i></a>
             </div>
           </div>

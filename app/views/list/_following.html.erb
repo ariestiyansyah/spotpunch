@@ -15,23 +15,15 @@
       <% case following.class.name %>
       <% when "Brand" %>
         <% if current_user.following?(following) %>
-          <%= link_to unfollow_brands_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-            <i class="spicon spicon-plus"></i> SPOTTING
-          <% end %>
+          <%= render partial: "brands/component/user_unfollowing", locals:{following:following, is_current_user_page:(true if @user==current_user)} %>
         <% else %>
-          <%= link_to follow_brands_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-            <i class="spicon spicon-plus"></i> SPOT
-          <% end %>
+          <%= render partial: "brands/component/user_following", locals:{following:following, is_current_user_page:(true if @user==current_user)} %>
         <% end %>
       <% when "Store" %>
         <% if current_user.following?(following) %>
-          <%= link_to unfollow_stores_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-            <i class="spicon spicon-plus"></i> SPOTTING
-          <% end %>
+          <%= render partial: "stores/component/user_unfollowing", locals:{following:following, is_current_user_page:(true if @user==current_user)} %>
         <% else %>
-          <%= link_to follow_stores_path(following), method: :post, remote:true, data:{params:"profile=true"}, class: "button" do %>
-            <i class="spicon spicon-plus"></i> SPOT
-          <% end %>
+          <%= render partial: "stores/component/user_following", locals:{following:following, is_current_user_page:(true if @user==current_user)} %>
         <% end %>
       <% when "User" %>
         <% unless following == current_user %>

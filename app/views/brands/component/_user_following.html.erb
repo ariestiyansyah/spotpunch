@@ -1,0 +1,3 @@
+<%= link_to follow_brands_path(following), method: :post, remote:true, data:{params:"profile=true&following_id=#{following.id}&is_current_user_page=#{is_current_user_page}"}, class: "button", id:"brand-following-#{following.id}" do %>
+  <i class="spicon spicon-plus"></i> SPOT
+<% end %>
