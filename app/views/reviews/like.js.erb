@@ -1,0 +1,1 @@
+$("#like-review-<%= params[:id] %>").replaceWith( "<%= escape_javascript(render partial: 'reviews/component/like', locals: { review:@review, id:params[:id] } ) %>" );

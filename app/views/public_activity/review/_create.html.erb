@@ -25,10 +25,10 @@
           </div>
           <div class="back">
             <div class="list-action">
-              <% if @current_user.liked? activity.trackable.product %>
-                <%= render partial: "products/component/like", locals: { product:activity.trackable.product, id:activity.trackable.id }%>
+              <% if @current_user.liked? activity.trackable %>
+                <%= render partial: "reviews/component/like", locals: { review:activity.trackable, id:activity.trackable.id }%>
               <% else %>
-                <%= render partial: "products/component/dislike", locals: { product:activity.trackable.product, id:activity.trackable.id }%>
+                <%= render partial: "reviews/component/dislike", locals: { review:activity.trackable, id:activity.trackable.id }%>
               <% end %>
               <a href="#comment"><i class="spicon spicon-comment"></i></a>
             </div>

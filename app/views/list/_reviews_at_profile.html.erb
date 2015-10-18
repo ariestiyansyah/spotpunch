@@ -7,10 +7,10 @@
     </div>
     <div class="list-content">
       <div class="text1">
-        <%= link_to review.store.name, show_malls_path(name:review.store.mall.id, permalink:review.store.id) %>
+        <%= link_to review.store.name, show_malls_path(name:review.store.mall.permalink, permalink:review.store.permalink) %>
       </div>
       <div class="text2">
-        <%= link_to review.product.name, products_show_malls_path(name:review.store.mall.id, permalink:review.store.id, product_id:review.product) %>
+        <%= link_to review.product.name, products_show_malls_path(name:review.store.mall.permalink, permalink:review.store.permalink, product_id:review.product) %>
       </div>
       <div class="text3">
         <%= link_to review.store.mall.name, mall_path(review.store.mall.permalink) %>
@@ -24,10 +24,10 @@
           </div>
           <div class="back">
             <div class="list-action">
-              <% if @current_user.liked? review.product %>
-                <%= render partial: "products/component/like", locals: { product:review.product, id:review.product.id }%>
+              <% if @current_user.liked? review %>
+                <%= render partial: "reviews/component/like", locals: { review:review, id:review.id }%>
               <% else %>
-                <%= render partial: "products/component/dislike", locals: { product:review.product, id:review.product.id }%>
+                <%= render partial: "reviews/component/dislike", locals: { review:review, id:review.id }%>
               <% end %>
               <a href="#comment"><i class="spicon spicon-comment"></i></a>
             </div>

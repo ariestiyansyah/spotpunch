@@ -72,7 +72,7 @@
               <div class="header">
                 <div class="title">
                   <h3><%= @product.name %></h3>
-                  <div class="price">Rp 599.000</div>
+                  <div class="price"><%= number_to_currency(@product.price.to_f, unit: "Rp ") %></div>
                   <div class="rate">
                     <% @average_score.to_i.times do |i| %>
                       <i class="spicon spicon-star active"></i>

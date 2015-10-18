@@ -11,4 +11,15 @@ class ReviewsController < ApplicationController
     end
     # review.create_activity key: 'review.create', owner: User.first
   end
+
+  def like
+    @review            = Review.find_by_id params[:review_id] 
+    @review.liked_by current_user
+  end
+
+  def dislike
+    @review            = Review.find_by_id params[:review_id] 
+    @review.unliked_by current_user
+  end
+
 end

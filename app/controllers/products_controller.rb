@@ -13,14 +13,14 @@ class ProductsController < ApplicationController
     @is_user_following  = current_user.following?(@brand)
   end
 
-  def like
-    @product            = Product.find_by_id params[:product_id] 
-    @product.liked_by current_user
-  end
+  # def like
+  #   @product            = Product.find_by_id params[:product_id] 
+  #   @product.liked_by current_user
+  # end
 
-  def dislike
-    @product            = Product.find_by_id params[:product_id] 
-    @product.unliked_by current_user
-  end
+  # def dislike
+  #   @product            = Product.find_by_id params[:product_id] 
+  #   @product.unliked_by current_user
+  # end
 
 end

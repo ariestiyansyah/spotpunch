@@ -11,15 +11,15 @@ module ApplicationHelper
     case model.class.name
     when "Brand"
       link_to "#", class: "list-photo" do
-        '<img src="images/photo/photo02.jpg" alt="logo" />'.html_safe
+        '<img src="/images/photo/photo02.jpg" alt="logo" />'.html_safe
       end
     when "Store"
       link_to "#", class: "list-photo" do
-        '<img src="images/photo/photo02.jpg" alt="logo" />'.html_safe
+        '<img src="/images/photo/photo02.jpg" alt="logo" />'.html_safe
       end
     when "User"
       link_to profile_path(permalink:model.username), class: "list-photo" do
-        '<img src="images/photo/photo02.jpg" alt="logo" />'.html_safe
+        '<img src="/images/photo/photo01.jpg" alt="Photo" />'.html_safe
       end
     end
   end

@@ -1,0 +1,3 @@
+<%= link_to like_reviews_path(review), method: :post, remote:true, data:{params:"id=#{id}"} , class: "", id: "like-review-#{id}" do %>
+  <i class="spicon spicon-like"></i>
+<% end %>

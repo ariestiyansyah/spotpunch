@@ -4,16 +4,14 @@
   </div>
   <div class="list">
     <div class="list-image">
-      <a href="profile.html" class="list-photo">
-        <img src="/images/photo/photo01.jpg" alt="photo" />
-      </a>
+      <%= display_list_image_profile review.user %>
     </div>
     <div class="list-content">
       <div class="text1">
-        <%= link_to review.store.name, show_malls_path(name:review.store.mall.id, permalink:review.store.id) %>
+        <%= link_to review.store.name, show_malls_path(name:review.store.mall.permalink, permalink:review.store.permalink) %>
       </div>
       <div class="text2">
-        <%= link_to review.product.name, products_show_malls_path(name:review.store.mall.id, permalink:review.store.id, product_id:review.product) %>
+        <%= link_to review.product.name, products_show_malls_path(name:review.store.mall.permalink, permalink:review.store.permalink, product_id:review.product) %>
       </div>
       <div class="text3">
         <%= link_to review.store.mall.name, mall_path(review.store.mall.permalink) %>
