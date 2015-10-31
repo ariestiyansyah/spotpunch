@@ -83,12 +83,17 @@
                   </div>
                 </div>
                 <div class="score">
-                  <span class="score-badge"><%= @average_score.to_f %></span>
+                  <span class="score-badge"><%= @average_score %></span>
                 </div>
               </div>
               <div class="header">
                 <div class="like">
-                  <i class="spicon spicon-like"></i> <span>5,214 Likes</span>
+                  <% if @current_user.liked? @product %>
+                    <%= render partial: "products/component/like", locals: { product:@product }%>
+                  <% else %>
+                    <%= render partial: "products/component/dislike", locals: { product:@product }%>
+                  <% end %>
+                   <span id="liked_size"><%= @liked_size %> Likes</span>
                 </div>
                 <div class="comment">
                   <i class="spicon spicon-punch"></i> <span><%= @reviews.size %> Punches</span>

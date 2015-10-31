@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   end
 
   resources :products, only:[] do
+    post  ':product_id/like'      => 'products#like',     on: :collection, as: :like
+    post  ':product_id/dislike'   => 'products#dislike',  on: :collection, as: :dislike
   end
 
   resources :reviews, only:[] do

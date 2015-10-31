@@ -1,0 +1,2 @@
+$("#like-product-<%= @product.id %>").replaceWith( "<%= escape_javascript(render partial: 'products/component/like', locals: { product:@product, id:@product.id } ) %>" );
+$("#liked_size").html("<%= @liked_size %> Likes");
