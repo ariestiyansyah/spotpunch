@@ -1,1 +1,5 @@
-$("#like-review-<%= params[:id] %>").replaceWith( "<%= escape_javascript(render partial: 'reviews/component/like', locals: { review:@review, id:params[:id] } ) %>" );
+<% if params[:size] %>
+  $("#like-review-<%= params[:id] %>").replaceWith( "<%= escape_javascript(render partial: 'reviews/component/like_with_size', locals: { review:@review, id:params[:id] } ) %>" );
+<% else %>
+  $("#like-review-<%= params[:id] %>").replaceWith( "<%= escape_javascript(render partial: 'reviews/component/like', locals: { review:@review, id:params[:id] } ) %>" );
+<% end %>

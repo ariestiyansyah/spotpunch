@@ -1,0 +1,3 @@
+<%= link_to dislike_reviews_path(review), method: :post, remote:true, data:{params:"id=#{id}&size=1"}, class: "active", id: "like-review-#{id}" do %>
+  <i class="spicon spicon-like"></i><span class="count"><%= review.cached_votes_up %></span>
+<% end %>

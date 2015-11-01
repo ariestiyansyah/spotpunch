@@ -1,6 +1,6 @@
 <li class="item">
   <div class="time">
-    <span>3w</span>
+    <span><%= time_ago_in_words review.created_at, :locale => :spotpunch %></span>
   </div>
   <div class="list">
     <div class="list-image">
@@ -19,7 +19,11 @@
     </div>
     <div class="list-nav list-flip">
       <div class="list-action product-action">
-        <a class="active" href="#like"><i class="spicon spicon-like"></i> <span class="count">243</span></a>
+        <% if @current_user.liked? review %>
+          <%= render partial: "reviews/component/like_with_size", locals: { review:review, id:review.id }%>
+        <% else %>
+          <%= render partial: "reviews/component/dislike_with_size", locals: { review:review, id:review.id }%>
+        <% end %>
         <a href="#comment"><i class="spicon spicon-comment"></i> <span class="count">12</span></a>
       </div>
     </div>
