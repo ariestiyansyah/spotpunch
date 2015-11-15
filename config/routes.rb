@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get   ':name/:permalink'                      => 'stores#show',       on: :collection, as: :show
     get   ':name/:permalink/:product_id'          => 'products#show',     on: :collection, as: :products_show
     post  ':name/:permalink/:product_id/reviews'  => 'reviews#create',    on: :collection, as: :reviews_create
+    post  ':mall_id/follow'                       => 'malls#follow',      on: :collection, as: :follow
+    post  ':mall_id/unfollow'                     => 'malls#unfollow',    on: :collection, as: :unfollow
   end
 
   resources :brands, only:[] do

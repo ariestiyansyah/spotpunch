@@ -1,4 +1,6 @@
 class Mall < ActiveRecord::Base
+  acts_as_followable
+  
   has_many :stores
   
   extend FriendlyId

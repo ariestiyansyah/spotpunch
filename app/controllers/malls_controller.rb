@@ -1,7 +1,37 @@
 class MallsController < ApplicationController
 
   def show
-    @mall = Mall.friendly.find(params[:id])
+    @mall               = Mall.friendly.find(params[:id])
+    @is_user_following  = current_user.following?(@mall)
+  end
+
+  def follow
+    @mall = Mall.friendly.find params[:mall_id]   
+    current_user.follow(@mall)
+    if params[:profile]
+      respond_to do |format|
+        unless params[:following_id]
+          format.js { render "user_follower" }
+        else        
+          format.js { render "user_following" }
+        end
+        format.html
+      end
+    else
+    end
+  end
+
+  def unfollow
+    @mall = Mall.friendly.find params[:mall_id]  
+    current_user.stop_following(@mall)
+    if params[:profile]
+      @following_size = current_user.follow_count
+      respond_to do |format|
+        format.js { render "user_unfollow" }
+        format.html
+      end
+    else
+    end
   end
   
 end

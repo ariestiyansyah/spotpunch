@@ -53,8 +53,13 @@
               </li>
             </ul>
           </div>
-          <div class="menu-button">
-            <a class="button" href="#spot"><i class="spicon spicon-plus"></i> SPOT</a>
+          <div class="menu-button" id="spot-button">
+            <% if @is_user_following %>
+              <%= render "malls/component/unfollow"%>
+            <% else %>
+              <%= render "malls/component/follow"%>
+            <% end %>
+            <!-- <a class="button" href="#spot"><i class="spicon spicon-plus"></i> SPOT</a> -->
           </div>
         </div>
 
