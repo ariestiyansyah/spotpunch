@@ -1,0 +1,31 @@
+<% stores_at_floor = @stores.select{|store| store.standing_floor_name == floor } %>
+<ul class="listing">
+  <% stores_at_floor.each do |store| %>
+    <li class="item">
+      <div class="list">
+        <div class="list-image category-icon">
+          <a href="shop.html">
+            <i class="spicon spicon-food"></i>
+          </a>
+        </div>
+        <div class="list-content">
+          <h2 class="shop-title">
+            <%= link_to store.name, show_malls_path(name:store.mall.permalink, permalink:store.permalink) %>
+          </h2>
+          <div class="shop-category">
+            <a href="#shop-category">Food</a>
+          </div>
+        </div>
+        <%= link_to show_malls_path(name:store.mall.permalink, permalink:store.permalink), class: "list-nav" do %>
+          <i class="spicon spicon-arrow-right"></i>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+  <%= '<li class="item align-center"><span>NO ITEMS HERE</span></li>'.html_safe if stores_at_floor.blank? %>
+</ul>
+<% unless stores_at_floor.blank? %>
+  <div class="loadmore">
+    <a href="#loadmore">LOADMORE</a>
+  </div>
+<% end %>

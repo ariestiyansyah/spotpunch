@@ -3,6 +3,8 @@ class MallsController < ApplicationController
   def show
     @mall               = Mall.friendly.find(params[:id])
     @is_user_following  = current_user.following?(@mall)
+    @standing_floors    = @mall.standing_floor.split(", ") unless @mall.standing_floor.blank?
+    @stores             = @mall.stores
   end
 
   def follow

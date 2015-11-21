@@ -15,7 +15,20 @@
 # review.create_activity key: 'review.create', owner: User.first
 
 # Second Seed 13 Sept 2015
-product       = Product.find_or_create_by(name:"Iphone 6")
-ibox_store    = Store.find_by_permalink "ibox"
-product_store = StoreProduct.new product:product, store:ibox_store
-product_store.save
+# product       = Product.find_or_create_by(name:"Iphone 6")
+# ibox_store    = Store.find_by_permalink "ibox"
+# product_store = StoreProduct.new product:product, store:ibox_store
+# product_store.save
+
+# Third Seed Seed 13 Sept 2015
+mall    = Mall.find_by_name "Central Park"
+uniqlo  = Store.find_by_name "Uniqlo"
+ibox    = Store.find_by_name "Ibox"
+
+mall.standing_floor = "LG, LGM, GF, UG, 1, 2, 3, 4, 5"
+uniqlo.standing_floor_name = "LG"
+ibox.standing_floor_name = "LGM"
+
+mall.save
+uniqlo.save
+ibox.save
