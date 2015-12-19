@@ -1,39 +1,103 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="canvas">
+  <!-- Sidebars -->
+  <%= render "users/sidebar"%>
+  <!-- Content -->
+  <div class="content">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <!-- Left Icon -->
+        <span id="toogle-sidebar" class="visible-phone pull-left">
+          <i class="spicon spicon-nav"></i>
+        </span>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+        <!-- Right Icon -->
+        <a href="modals/search.html" data-toggle="modal" data-target="#spotpunch-modal" class="pull-right">
+          <i class="spicon spicon-search"></i>
+        </a>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+        <!-- Header Title -->
+        <h1 class="navbar-title">PROFILE</h1>
+      </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+      <!-- Profile -->
+      <div class="profile">
+        <!-- Profile Header -->
+        <div class="header">
+          <div class="image">
+            <img src="/images/photo/photo01_large.jpg" alt="photo" />
+          </div>
+          <div class="info">
+            <h3 class="photo-label">Photo</h3>
+            <!-- <a class="button button-spoting" href="#remove">REMOVE</a> -->
+            <a class="button" href="#upload">UPLOAD</a>
+          </div>
+        </div>
+        <!-- Profile Form -->
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <div class="form-group">
+            <label for="fullname">FIRST NAME</label>
+            <%= f.text_field :firstname, placeholder:"First Name" %>
+          </div>
+          <div class="form-group">
+            <label for="fullname">LAST NAME</label>
+            <%= f.text_field :lastname, placeholder:"Last Name" %>
+          </div>
+          <div class="form-group">
+            <label for="username">USERNAME</label>
+            <%= f.text_field :username, placeholder:"Username" %>
+          </div>
+          <div class="form-group">
+            <label for="location">LOCATION</label>
+            <%= f.text_field :location, placeholder:"Location" %>
+          </div>
+          <div class="form-group">
+            <label for="email">EMAIL</label>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+          <div class="form-group">
+            <label for="phone">PHONE</label>
+            <%= f.text_field :phone, placeholder:"Phone" %>
+          </div>
+          <div class="form-group">
+            <label for="shortbio">SHORT BIO</label>
+            <%= f.text_field :biodata, placeholder:"Short Biodata" %>
+          </div>
+          <div class="form-group">
+            <label for="shortbio">PASSWORD</label>
+            <%= f.password_field :password, autocomplete: "off", placeholder:"leave blank if you don't want to change it" %>
+          </div>
+          <div class="form-group">
+            <label for="shortbio">PASSWORD CONFIRMATION</label>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+          <div class="form-group">
+            <label for="shortbio">CURRENT PASSWORD</label>
+            <%= f.password_field :current_password, autocomplete: "off", placeholder:"we need your current password to confirm your changes" %>
+          </div>
+          <div class="form-group">
+            <label class="checkbox">
+              <input type="checkbox" name="subscribe">
+              <span>I want to receive updates from Spotpunch to my email.</span>
+            </label>
+          </div>
+          <div class="form-group">
+            <button type="submit">SAVE</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<script type="text/javascript">
+$( document ).ready(function() {
+  if (!<%= devise_error_messages!.blank? %>
+        ) {
+    alert("<%= devise_error_messages!.html_safe %>");
+  };
+});
+</script>
