@@ -1,4 +1,7 @@
 class StoresController < ApplicationController
+  before_action :authenticate_user!
+  before_filter :modal_search_exist,       only:[:index, :show]
+
   def show
     @mall               = Mall.find_by_permalink params[:name]
     @store              = @mall.stores.find_by permalink: params[:permalink]
@@ -33,6 +36,10 @@ class StoresController < ApplicationController
       end
     else
     end
+  end
+
+  def index
+    @malls = Mall.all.includes(:stores)
   end
 
 end

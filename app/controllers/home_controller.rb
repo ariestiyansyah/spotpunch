@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
+  before_filter :modal_search_exist
   
   def index
     @user         = User.new

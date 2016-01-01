@@ -1,5 +1,5 @@
 <div class="modal-body modal-theme-dark">
-  <form class="search-form" action="#" method="post">
+  <%= form_for :store, url: stores_path, html: { class: "search-form" }, method: :get do |f| %>
     <p>You can easily filter your search with this feature.<br />Please try to filter based on what you need.</p>
     <div class="search-category">
       <label><input type="checkbox" name="category[]" value="food" /><i class="spicon spicon-food"></i></label>
@@ -15,6 +15,9 @@
     <div class="search-input">
       <select name="mall">
         <option value="">-- MALL --</option>
+        <% @search_malls.each do |mall| %>
+          <option value="<%= mall.name%>">-- <%= mall.name %> --</option>
+        <% end %>
       </select>
     </div>
     <div class="search-input">
@@ -31,5 +34,5 @@
       <input type="submit" value="SEARCH" /> 
       <input data-dismiss="modal" aria-label="Close" aria-hidden="true" type="button" value="CANCEL" />
     </div>
-  </form>
+  <% end %>
 </div>

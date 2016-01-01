@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
+  
   before_action :authenticate_user!
+  before_filter :modal_search_exist,       only:[:show]
   
   def show
     @product            = Product.find_by_id params[:product_id]

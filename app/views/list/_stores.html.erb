@@ -1,0 +1,25 @@
+<% mall.stores.each do |store| %>
+  <li class="item">
+    <div class="list">
+      <div class="list-image category-icon">
+        <%= link_to show_malls_path(name:mall.permalink, permalink:store.permalink)  do %>
+          <i class="spicon spicon-food"></i>
+        <% end %>
+      </div>
+      <div class="list-content">
+        <h2 class="shop-title">
+          <%= link_to store.name, show_malls_path(name:mall.permalink, permalink:store.permalink) %>
+        </h2>
+        <div class="shop-category">
+          <a href="#shop-category">Food</a>
+        </div>
+      </div>
+      <%= link_to show_malls_path(name:mall.permalink, permalink:store.permalink), class: "list-nav"  do %>
+        <i class="spicon spicon-arrow-right"></i>
+      <% end %>
+    </div>
+  </li>
+<% end %>
+<!-- <li class="divider">
+  <a href="#">More 28 Merchants from Gandaria City</a>
+</li> -->

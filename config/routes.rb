@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     post  ':brand_id/unfollow'    => 'brands#unfollow',  on: :collection, as: :unfollow
   end
 
-  resources :stores, only:[] do
+  resources :stores, only:[:index] do
     post  ':store_id/follow'      => 'stores#follow',    on: :collection, as: :follow
     post  ':store_id/unfollow'    => 'stores#unfollow',  on: :collection, as: :unfollow
   end

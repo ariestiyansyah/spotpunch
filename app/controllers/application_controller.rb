@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def modal_search_exist
+    @search_malls = Mall.all
+  end
+
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, 

@@ -1,0 +1,28 @@
+<!-- Canvas -->
+<div class="canvas">
+  <!-- Sidebars -->
+  <%= render "layouts/sidebar"%>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Header -->
+    <%= render partial: "container/header", locals: { title: "SEARCH" }%>
+
+    <!-- Container -->
+    <div class="container">
+      <!-- <div class="search-body">
+        <span>Results 126 Merchants</span>
+      </div> -->
+      <div class="shop">
+        <ul class="listing">
+          <% @malls.each do |mall| %>
+            <%= render partial: "list/stores", locals:{mall:mall}%>
+          <% end %>
+        </ul>
+        <div class="loadmore">
+          <a href="#loadmore">LOADMORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

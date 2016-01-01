@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  
+  before_action :authenticate_user!
+  
   def create
     product       = Product.find_by_id params[:product_id]
     mall          = Mall.find_by_permalink params[:name]

@@ -1,4 +1,7 @@
 class MallsController < ApplicationController
+  
+  before_action :authenticate_user!
+  before_filter :modal_search_exist,       only:[:show]
 
   def show
     @mall               = Mall.friendly.find(params[:id])
