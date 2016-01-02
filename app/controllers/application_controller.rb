@@ -38,7 +38,10 @@ class ApplicationController < ActionController::Base
         :password_confirmation, 
         :firstname, 
         :lastname,
-        :current_password)
+        :current_password,
+        :location, 
+        :phone, 
+        :biodata)
       end
     end
 end
