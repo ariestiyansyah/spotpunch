@@ -19,3 +19,7 @@
 
 # Ignore all logfiles and tempfiles.
 /*.lock
+
+# Ignore RubyMine ariestiyansyah
+.idea/*
+.idea/
