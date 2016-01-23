@@ -12,7 +12,11 @@
         <!-- Profile Header -->
         <div class="header">
           <div class="image">
-            <img src="images/photo/photo01_large.jpg" alt="photo" />
+            <% if current_user.image.blank? %>
+              <img src="images/photo/photo01_large.jpg" alt="photo" />
+            <% else %>
+              <img src="<%= current_user.image.avatar.url %>" alt="photo" />
+            <% end %>
           </div>
           <div class="info">
             <h3 class="name"><%= display_name @user %></h3>

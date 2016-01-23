@@ -11,4 +11,18 @@ class User < ActiveRecord::Base
 
   has_one   :permalink, as: :linkable
   has_many  :reviews
+  has_one   :image,       as: :imageable
+
+  def add_image file
+    unless file.blank?
+      if image.blank?
+        img           = Image.new
+        img.imageable = self
+      else
+        img           = self.image
+      end
+      img.avatar      = file
+      img.save
+    end
+  end
 end

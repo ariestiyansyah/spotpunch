@@ -28,16 +28,21 @@
         <!-- Profile Header -->
         <div class="header">
           <div class="image">
-            <img src="/images/photo/photo01_large.jpg" alt="photo" />
+            <% if current_user.image.blank? %>
+              <img id="profile" src="/images/photo/photo01_large.jpg" alt="photo" />
+            <% else %>
+              <img id="profile" src="<%= current_user.image.avatar.url %>" alt="photo" />
+            <% end %>
           </div>
           <div class="info">
             <h3 class="photo-label">Photo</h3>
             <!-- <a class="button button-spoting" href="#remove">REMOVE</a> -->
-            <a class="button" href="#upload">UPLOAD</a>
+            <a class="button" id="upload">UPLOAD</a>
           </div>
         </div>
         <!-- Profile Form -->
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
+          <%= f.file_field :image, style:"display:none;"%>
           <div class="form-group">
             <label for="fullname">FIRST NAME</label>
             <%= f.text_field :firstname, placeholder:"First Name" %>
@@ -99,5 +104,12 @@ $( document ).ready(function() {
         ) {
     alert("<%= devise_error_messages!.html_safe %>");
   };
+  $('#upload').click(function(){
+    $('#user_image').click();
+  });
+
+  $("#user_image").change(function(event){
+    $("img#profile").fadeIn("slow").attr('src',URL.createObjectURL(event.target.files[0]));
+  });
 });
 </script>
