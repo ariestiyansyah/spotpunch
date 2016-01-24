@@ -1,0 +1,49 @@
+<div class="sidebar">
+  <div class="sidebar-inner">
+    <!-- Sidebar Profile -->
+    <%= render "container/profile" %>
+    <!-- Sidebar Navigation -->
+    <ul class="navigation">
+      <li>
+        <%= link_to root_path do %>
+          <i class="spicon spicon-home"></i> Timeline
+        <% end %>
+      </li>
+      <li>
+        <%= link_to administrators_path do %>
+          <i class="spicon spicon-activity"></i> Index</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to malls_administrators_path do %>
+          <i class="spicon spicon-activity"></i> Mall</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to stores_administrators_path do %>
+          <i class="spicon spicon-activity"></i> Store</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to brands_administrators_path do %>
+          <i class="spicon spicon-activity"></i> Brand</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to products_administrators_path do %>
+          <i class="spicon spicon-activity"></i> Product</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to users_administrators_path do %>
+          <i class="spicon spicon-activity"></i> User</a>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="spicon spicon-logout"></i> Logout
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

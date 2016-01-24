@@ -1,5 +1,6 @@
 class AdministratorsController < ApplicationController
   before_action :authenticate_user!
+  before_filter :modal_search_exist
   
   layout "administrator"
 
@@ -20,6 +21,10 @@ class AdministratorsController < ApplicationController
   end
 
   def products
+    
+  end
+
+  def brands
     
   end
 

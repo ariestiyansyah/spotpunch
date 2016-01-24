@@ -7,8 +7,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
-  storage :azure
+  storage :file
+  # storage :azure
   after :remove, :delete_empty_upstream_dirs
   # storage :fog
 
