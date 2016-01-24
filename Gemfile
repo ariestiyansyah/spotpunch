@@ -24,6 +24,7 @@ gem 'public_activity'
 gem 'friendly_id'
 gem 'mini_magick'
 gem 'rmagick', '~> 2.13.2', require: false
+gem 'roo'
 
 group :development, :test do
   gem 'sqlite3'

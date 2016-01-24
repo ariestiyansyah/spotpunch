@@ -3,6 +3,14 @@
   <div class="content">
     <%= render partial: "container/header", locals: { title: "MALL" }%>
     <div class="container">
+      <ul class="listing">
+        <% @malls.each do |mall| %>
+          <%= render partial: "list/mall_at_administrator", locals: { mall: mall }%>
+        <% end %>
+      </ul>
+      <!-- <div class="loadmore">
+        <a href="#loadmore">LOADMORE</a>
+      </div> -->
     </div>
   </div>
 </div>

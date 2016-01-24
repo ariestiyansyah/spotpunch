@@ -1,79 +1,35 @@
 <div class="canvas">
-  <!-- Sidebar -->
-  <%= render "layouts/sidebar"%>
-  <!-- Dashboard Content -->
+  <%= render "layouts/admin_sidebar"%>
   <div class="content">
-    <!-- Header -->
-    <header class="navbar">
-      <div class="navbar-inner">
-        <!-- Left Icon -->
-        <a id="toogle-sidebar" href="#" class="pull-left">
-          <i class="spicon spicon-nav"></i>
-        </a>
-        <!-- Right Icon -->
-        <a href="#" data-toggle="modal" data-target="#full-modal" class="pull-right">
-          <i class="spicon spicon-search"></i>
-        </a>
-        <!-- Header Title -->
-        <h1 class="title"><%= params[:action] %></h1>
-      </div>
-    </header>
-    <!-- Container -->
+    <%= render partial: "container/header", locals: { title: "IMPORT DATA" }%>
     <div class="container">
-      <!-- Listing -->
-      <!-- Load More -->
-      <div id="loadmore" class="load-more">
-        <a href="#loadmore">LOADMORE</a>
-      </div>
+      Import Mall
+      <%= form_tag import_malls_path, multipart: true, role: "form" do %>
+          <div class="form-group">
+            <div>
+              <%= file_field_tag :file %>
+            </div>
+          </div>
+          <%= submit_tag "Import", class: "btn btn-primary" %>
+        <% end %>
+      Import Brands
+      <%= form_tag import_malls_path, multipart: true, role: "form" do %>
+          <div class="form-group">
+            <div>
+              <%= file_field_tag :file %>
+            </div>
+          </div>
+          <%= submit_tag "Import", class: "btn btn-primary" %>
+        <% end %>
+      Import Stores
+      <%= form_tag import_malls_path, multipart: true, role: "form" do %>
+          <div class="form-group">
+            <div>
+              <%= file_field_tag :file %>
+            </div>
+          </div>
+          <%= submit_tag "Import", class: "btn btn-primary" %>
+        <% end %>
     </div>
   </div>
 </div>
-<!-- Modal Box -->
-<div class="modal fade" id="full-modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <%= render "modal/search"%>
-    </div>
-  </div>
-</div>
-<script type="text/javascript">
-(function ($){
-  $('#toogle-sidebar').on('click', function (e) {
-    e.preventDefault();
-    var canvas = $('.canvas').toggleClass('on');
-    $('.container').on('click', function (e) {
-      if (canvas.hasClass('on'))
-      {
-        canvas.removeClass('on');
-      }
-    });
-  });
-  $('.timeline-right').each(function () {
-    var $this = $(this);
-    var image = $this.find('.product-image');
-    if (image.length)
-    {
-      $this.on('click', function (e) {
-        var off;
-        image.addClass('off');
-        if (image.hasClass('off'))
-        {
-          $this.find('.icon').addClass('in');
-          $this.on('mouseout', function () {
-            off = setTimeout(function () {
-              image.removeClass('off');
-              $this.find('.icon').removeClass('in');
-            }, 2500);
-          });
-          if (image.hasClass('off'))
-          {
-            $this.on('mouseover', function () {
-              clearInterval(off);
-            });
-          }
-        }
-      });
-    }
-  });
-})(jQuery);
-</script>

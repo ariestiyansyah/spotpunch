@@ -12,10 +12,11 @@ Rails.application.routes.draw do
     get 'promotions'                  => 'administrators#promotions',           on: :collection
     get 'setting'                     => 'administrators#setting',              on: :collection
     get 'import'                      => 'administrators#import',               on: :collection
-    collection { post :import }
+    # collection { post :import }
   end
   
   resources :malls, only:[:show] do
+    collection { post :import }
     get   ':name/:permalink'                      => 'stores#show',       on: :collection, as: :show
     get   ':name/:permalink/:product_id'          => 'products#show',     on: :collection, as: :products_show
     post  ':name/:permalink/:product_id/reviews'  => 'reviews#create',    on: :collection, as: :reviews_create

@@ -13,7 +13,7 @@ class AdministratorsController < ApplicationController
   end
 
   def malls
-    
+    @malls = Mall.all
   end
 
   def stores
@@ -34,6 +34,9 @@ class AdministratorsController < ApplicationController
 
   def setting
     
+  end
+
+  def import
   end
   
 end
