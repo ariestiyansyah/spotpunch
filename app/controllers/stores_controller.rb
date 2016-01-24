@@ -42,4 +42,9 @@ class StoresController < ApplicationController
     @malls = Mall.all.includes(:stores)
   end
 
+  def import
+    Store.import(params[:file], params[:is_update])
+    redirect_to import_administrators_url
+  end
+
 end

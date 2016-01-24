@@ -5,7 +5,7 @@
       <div class="list">
         <div class="list-image category-icon">
           <a href="shop.html">
-            <i class="spicon spicon-food"></i>
+            <i class="spicon spicon-<%= store.kind.downcase unless store.kind.blank? %>"></i>
           </a>
         </div>
         <div class="list-content">
@@ -13,7 +13,7 @@
             <%= link_to store.name, show_malls_path(name:store.mall.permalink, permalink:store.permalink) %>
           </h2>
           <div class="shop-category">
-            <a href="#shop-category">Food</a>
+            <a href="#shop-category"><%= store.kind %></a>
           </div>
         </div>
         <%= link_to show_malls_path(name:store.mall.permalink, permalink:store.permalink), class: "list-nav" do %>

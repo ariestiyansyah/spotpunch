@@ -13,7 +13,7 @@
           <%= submit_tag "Import", class: "btn btn-primary" %>
         <% end %>
       Import Brands
-      <%= form_tag import_malls_path, multipart: true, role: "form" do %>
+      <%= form_tag import_brands_path, multipart: true, role: "form" do %>
           <div class="form-group">
             <div>
               <%= file_field_tag :file %>
@@ -22,7 +22,7 @@
           <%= submit_tag "Import", class: "btn btn-primary" %>
         <% end %>
       Import Stores
-      <%= form_tag import_malls_path, multipart: true, role: "form" do %>
+      <%= form_tag import_stores_path, multipart: true, role: "form" do %>
           <div class="form-group">
             <div>
               <%= file_field_tag :file %>

@@ -29,4 +29,9 @@ class BrandsController < ApplicationController
     else
     end
   end
+
+  def import
+    Brand.import(params[:file], params[:is_update])
+    redirect_to import_administrators_url
+  end
 end

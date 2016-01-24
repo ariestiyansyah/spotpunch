@@ -25,11 +25,13 @@ Rails.application.routes.draw do
   end
 
   resources :brands, only:[] do
+    collection { post :import }
     post  ':brand_id/follow'      => 'brands#follow',    on: :collection, as: :follow
     post  ':brand_id/unfollow'    => 'brands#unfollow',  on: :collection, as: :unfollow
   end
 
   resources :stores, only:[:index] do
+    collection { post :import }
     post  ':store_id/follow'      => 'stores#follow',    on: :collection, as: :follow
     post  ':store_id/unfollow'    => 'stores#unfollow',  on: :collection, as: :unfollow
   end
@@ -48,12 +50,6 @@ Rails.application.routes.draw do
     post  ':review_id/like'      => 'reviews#like',     on: :collection, as: :like
     post  ':review_id/dislike'   => 'reviews#dislike',  on: :collection, as: :dislike
   end
-
-  # resources :brands, only:[] do
-  #   resources :products, only:[:show] do
-  #     resources :reviews
-  #   end
-  # end
 
   get   '/:permalink'                 => 'home#profile',                        as: "profile",              :constraints => { :name => /[^\/]+/ }
 end
