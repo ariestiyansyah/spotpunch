@@ -6,7 +6,7 @@ class MallsController < ApplicationController
   def show
     @mall               = Mall.friendly.find(params[:id])
     @is_user_following  = current_user.following?(@mall)
-    @standing_floors    = @mall.standing_floor.split(", ") unless @mall.standing_floor.blank?
+    @standing_floors    = @mall.standing_floor.blank? ? [] : @mall.standing_floor.split(", ") 
     @stores             = @mall.stores
   end
 
