@@ -17,7 +17,7 @@ class AdministratorsController < ApplicationController
   end
 
   def stores
-    
+    @stores = Store.all
   end
 
   def products
@@ -25,7 +25,7 @@ class AdministratorsController < ApplicationController
   end
 
   def brands
-    
+    @brands = Brand.all
   end
 
   def promotions

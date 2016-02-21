@@ -13,6 +13,13 @@ class User < ActiveRecord::Base
   has_many  :reviews
   has_one   :image,       as: :imageable
 
+  has_many :user_roles
+  has_many :roles, through: :user_roles
+
+  def is_admin
+    !roles.where(name:"Admin").blank?
+  end
+
   def add_image file
     unless file.blank?
       if image.blank?

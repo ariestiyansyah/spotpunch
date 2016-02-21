@@ -1,0 +1,9 @@
+<div class="canvas">
+  <%= render "layouts/admin_sidebar"%>
+  <div class="content">
+    <%= render partial: "container/header", locals: { title: "Edit #{@mall.name}" }%>
+    <div class="container">
+      <%= render "form/mall"%>
+    </div>
+  </div>
+</div>

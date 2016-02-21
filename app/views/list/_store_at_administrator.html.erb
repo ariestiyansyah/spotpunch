@@ -8,13 +8,13 @@
     </div>
     <div class="list-content">
       <div class="text1">
-        <%= link_to mall.name, mall_path(mall.permalink) %>
+        <%= link_to store.name, show_malls_path(name:store.mall.permalink, permalink:store.permalink) %>
       </div>
       <div class="text2">
-        <%#= link_to activity.trackable.product.name, products_show_malls_path(name:activity.trackable.store.mall.permalink, permalink:activity.trackable.store.permalink, product_id:activity.trackable.product) %>
+        <%= link_to store.mall.name, mall_path(store.mall.permalink) %>
       </div>
       <div class="text3">
-        <%= link_to "Edit", edit_mall_path(mall.permalink) %> |
+        <%= link_to "Edit", "#" %> |
         <%= link_to "Delete", "#" %>
       </div>
     </div>

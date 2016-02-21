@@ -21,14 +21,20 @@
 # product_store.save
 
 # Third Seed Seed 13 Sept 2015
-mall    = Mall.find_by_name "Central Park"
-uniqlo  = Store.find_by_name "Uniqlo"
-ibox    = Store.find_by_name "Ibox"
+# mall    = Mall.find_by_name "Central Park"
+# uniqlo  = Store.find_by_name "Uniqlo"
+# ibox    = Store.find_by_name "Ibox"
 
-mall.standing_floor = "LG, LGM, GF, UG, 1, 2, 3, 4, 5"
-uniqlo.standing_floor_name = "LG"
-ibox.standing_floor_name = "LGM"
+# mall.standing_floor = "LG, LGM, GF, UG, 1, 2, 3, 4, 5"
+# uniqlo.standing_floor_name = "LG"
+# ibox.standing_floor_name = "LGM"
 
-mall.save
-uniqlo.save
-ibox.save
+# mall.save
+# uniqlo.save
+# ibox.save
+
+# Fourth Seed 21 Feb 2016
+role = Role.create(name:"Admin", is_readable:true, is_writable:true, is_executable:true)
+user = User.first
+user.roles << role
+user.save

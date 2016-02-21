@@ -1,0 +1,29 @@
+<%= form_for(@mall, html: { class: "login-form"}) do |f| %>
+  <div class="form-group">
+    <label for="fullname">NAME</label>
+    <%= f.text_field :name, placeholder:"Name" %>
+  </div>
+  <div class="form-group">
+    <label for="fullname">Address</label>
+    <%= f.text_field :address, placeholder:"Address" %>
+  </div>
+  <div class="form-group">
+    <label for="fullname">City</label>
+    <%= f.text_field :city, placeholder:"City" %>
+  </div>
+  <div class="form-group">
+    <label for="fullname">Lantai</label>
+    <%= f.text_field :standing_floor, placeholder:"Lantai" %>
+  </div>
+  <div class="form-group">
+    <label for="fullname">Latitude</label>
+    <%= f.text_field :latitude, placeholder:"Latitude" %>
+  </div>
+  <div class="form-group">
+    <label for="fullname">Longitude</label>
+    <%= f.text_field :longitude, placeholder:"Longitude" %>
+  </div>
+  <div class="form-group">
+    <button type="submit">SAVE</button>
+  </div>
+<% end %>

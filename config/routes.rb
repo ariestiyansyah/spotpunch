@@ -15,16 +15,20 @@ Rails.application.routes.draw do
     # collection { post :import }
   end
   
-  resources :malls, only:[:show] do
+  resources :malls, only:[:new, :edit, :create, :update] do
     collection { post :import }
+  end
+  
+  resources :malls, only:[] do
     get   ':name/:permalink'                      => 'stores#show',       on: :collection, as: :show
     get   ':name/:permalink/:product_id'          => 'products#show',     on: :collection, as: :products_show
     post  ':name/:permalink/:product_id/reviews'  => 'reviews#create',    on: :collection, as: :reviews_create
     post  ':mall_id/follow'                       => 'malls#follow',      on: :collection, as: :follow
     post  ':mall_id/unfollow'                     => 'malls#unfollow',    on: :collection, as: :unfollow
+    resources :stores, only:[:new, :edit, :create, :update]
   end
 
-  resources :brands, only:[] do
+  resources :brands, only:[:new, :edit, :create, :update] do
     collection { post :import }
     post  ':brand_id/follow'      => 'brands#follow',    on: :collection, as: :follow
     post  ':brand_id/unfollow'    => 'brands#unfollow',  on: :collection, as: :unfollow
